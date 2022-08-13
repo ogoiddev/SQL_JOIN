@@ -5,27 +5,27 @@ Material de estudo - Case para teste seletivo
 
 ## O que vamos aprender?
 
-  * Olá, hoje você vai aprender a utilizar a *cláusula* **JOIN**
-    - Com o **JOIN** voce pode combinar dados entre tabelas relacionadas ou até mesmo entre dados de uma única tabela de um determinado banco de dados, afim de gerar uma nova tabela personalizada conforme a sua necessidade.
+  * Olá, hoje você vai aprender a utilizar a *cláusula* **JOIN**;
+    - Com o **JOIN** voce pode combinar dados entre tabelas relacionadas ou até mesmo entre dados de uma única tabela de um determinado banco de dados, afim de gerar uma nova tabela personalizada conforme a sua necessidade;
 
 
 ## Você será capaz de:
 
   * Compreender como utilizar **INNER JOIN**, para combinar dados entre duas ou mais tabelas;
-  * Voce também vai aprender os casos de **LEFT JOIN** e **RIGHT JOIN**, também conhecidos como **OUTER JOIN**.
-  E alguns exemplos de **SELF JOIN**, **FULL JOIN**, **SEMI JOIN** e **ANTI JOIN**. 
+  * Voce também vai aprender os casos de **LEFT JOIN** e **RIGHT JOIN**, para combinar dados entre duas ou mais tabelas, preservando dados de uma das tabelas mesmo nao tendo uma referencia nao atendida;
+  * E exemplos de **SELF JOIN**, **FULL JOIN**, **SEMI JOIN** e **ANTI JOIN**;
 
 
 ## Porque isso é importante?
 
-  A *cláusula* **JOIN** permite que os dados de duas ou mais tabelas ou entre dados de uma mesma tabela sejam combinados com base na relação existente ou um valor referenciado. Com esse conhecimento você consegue atender a necessidades especificas do seu cliente e otimizar tarefas importantes do seu dia a dia.
+  A *cláusula* **JOIN** permite que os dados de duas ou mais tabelas ou entre dados de uma mesma tabela sejam combinados com base na relação existente ou um valor referenciado. Com esse conhecimento você consegue atender a necessidades especificas do seu cliente e otimizar tarefas importantes do seu dia a dia;
 
 
 ## Conteúdos
 
-  Para melhor fixar este conteúdo, recomendamos que voce acompanhe e execute na pratica os exemplos que vamos mostrar.
+  Para melhor fixar este conteúdo, recomendamos que voce acompanhe e execute na pratica os exemplos que vamos mostrar;
 
-  Criamos um banco de dados fictício de uma escola com apenas 3 tabelas para você exercitar.
+  Criamos um banco de dados fictício de uma escola com apenas 3 tabelas para você exercitar;
 
   
   ***Execute o SQLScript abaixo no seu MYSQL Workbench ou no software de sua preferência:***
@@ -173,14 +173,16 @@ Material de estudo - Case para teste seletivo
   Betina Mendes
 
 
-  * Repare que além de facilitar o entendimento do código podemos personalizar o nome da Coluna. Então quando você precisar criar queries mais complexas, ja sabe como facilitar e ou customizar seu código. Legal né!
+  * Repare que além de facilitar o entendimento do código podemos personalizar o nome da Coluna. Então quando você precisar criar queries mais complexas, ja sabe como facilitar e ou customizar seu código. Legal né!;
   
   * Agora vamos entender o resultado de um simples INNER JOIN;
+
 
 
  ### INNER JOIN
 
  ![Screenshot](INNER_JOIN.jpg)
+
 
 
 Execute a query abaixo:
@@ -191,6 +193,7 @@ Execute a query abaixo:
   INNER JOIN MySchool.Exams as E
   ON S.id = E.student_id;
   ```
+
 
   Seu resultado deve retornar assim:
   
@@ -206,7 +209,7 @@ Execute a query abaixo:
   8   |	Gregor     |	Hands    |	23  |	8   |	8          |	NULL  | NULL              | 0
 
 
-Agora digamos que voce precise de uma tabela que retorne o **o Nome Completo** dos alunos que ja realizaram as **provas** e de qual **turma** eles são, repare que vamos renomear os nomes das colunas para a tabela ficar mais *'amigável'*:
+Agora digamos que voce precise de uma tabela que retorne o **o Nome Completo** dos alunos que ja realizaram as **provas** e de qual **turma** eles são, repare que vamos renomear os nomes das colunas para a tabela ficar mais *'amigável'*;
 
 Execute a query abaixo e analise o resultado, repare que agora estamos relacionando dados de 3 tabelas diferentes:
 
@@ -233,11 +236,70 @@ Execute a query abaixo e analise o resultado, repare que agora estamos relaciona
 
 Agora você já conheceu o poder do **JOIN**, então vamos nos aprofundar ainda mais nesse conteúdo;
 
-#### LEFT JOIN
+
+### LEFT JOIN
 
 ![Screenshot](LEFT_JOIN.jpg)
 
 
+Execute a query abaixo:
+
+  ```
+  SELECT *
+  FROM MySchool.Students as S
+  LEFT JOIN MySchool.Grades as G
+  ON S.id = G.student_id
+  AND G.grade = 5;
+  ```
+
+
+* Repare que dessa vez os dados da tabela da **'Esquerda'** foi preservado mesmo nao sendo verdadeira a referencia da **'turma 5'** que escrevemos no código, as referencias nao atendidas retornam com os valores **Nulos**;
+
+Seu resultado deve retornar assim:
+
+  id  | first_name | last_name | age  | id   | grade | student_id
+ :--- | :---       | :---      | :--- | :--- | :---  | :---      
+  1	  | Jorge      |	Nends    |	37  |	1    |	5	   | 1
+  2	  | Ana        |	Flor     |	23  |	2    |	5	   | 2
+  3	  | Joana      |	Bela     |	33  |	NULL | NULL  | NULL
+  4	  | Andre      |	Molina   |	23  |	NULL | NULL  | NULL
+  5	  | Betina     |	Mendes   |	35  |	NULL | NULL  | NULL
+  6	  | Carlos     |	Berer    |	31  |	NULL | NULL  | NULL
+  7	  | Betina     |	Mendes   |	35  |	3    |	5	   | 7
+  8	  | Gregor     |	Hands    |	23  |	4    |	5	   | 8
+
+
+
+### RIGHT JOIN
+
+![Screenshot](RIGHT_JOIN.jpg)
+
+
+Execute a query abaixo:
+
+  ```
+  SELECT *
+  FROM MySchool.Students as S
+  RIGHT JOIN MySchool.Grades as G
+  ON S.id = G.student_id
+  AND G.grade = 5;
+  ```
+
+
+* Repare que simplesmente substituímos o **LEFT JOIN** pelo **RIGHT JOIN**, dessa vez os dados da tabela da **'Direita'** foi preservado e os dados das referencias nao atendidas também retornaram **Nulos**;
+
+Seu resultado deve retornar assim:
+
+  id   | first_name | last_name | age  | id   | grade | student_id
+ :---  | :---       | :---      | :--- | :--- | :---  | :---      
+  1    | Jorge      |	Nends     |	37   |	1   |	5     |	1
+  2    | Ana        |	Flor      |	23   |	2   |	5     |	2
+  7    | Betina     |	Mendes    |	35   |	3   |	5     |	7
+  8    | Gregor     |	Hands     |	23   |	4   |	5     |	8
+  NULL | NULL       | NULL      | NULL |  5   |	6     |	3
+  NULL | NULL       | NULL      | NULL |	6   |	6     |	4
+  NULL | NULL       | NULL      | NULL |	7   |	6     |	5
+  NULL | NULL       | NULL      | NULL |	8   |	6     |	6
 
 
 ## Vamos praticar!
