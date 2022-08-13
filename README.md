@@ -182,7 +182,27 @@ Material de estudo - Case para teste seletivo
 
  ![Screenshot](INNER_JOIN.jpg)
 
- Execute a query abaixo e repare que sem o **ON** do **INNER JOIN**, ou seja, sem um relacionamento declarado:
+ Execute a query abaixo:
+
+  ```
+  SELECT * 
+  FROM MySchool.Students as S
+  INNER JOIN MySchool.Exams as E
+  ON S.id = E.student_id;
+  ```
+
+  Seu resultado deve sair assim:
+  
+  id | first_name | last_name | age | id | student_id | score | status            | exam_status
+  :---|	:---      |	:---      |	:---|	:---|	:---      |	:---  |	:---            	| :---
+  1  |	Jorge     |	Nends     |	37  |	1  |	1         |	88    |	Approved	        | 1
+  2  |	Ana       |	Flor      |	23  |	2  |	2         |	78    |	Not approved yet	| 1
+  3  |	Joana     |	Bela      |	33  |	3  |	3         |	98    |	Approved	        | 1
+  4  |	Andre     |	Molina    |	23  |	4  |	4         |	68    |	Not approved yet	| 1
+  5  |	Betina    |	Mendes    |	35  |	5  |	5         |	35    |	Not approved yet	| 1
+  6  |	Carlos    |	Berer     |	31  |	6  |	6         |	NULL  | NULL              | 0
+  7  |	Betina    |	Mendes    |	35  |	7  |	7         |	NULL  | NULL              | 0
+  8  |	Gregor    |	Hands     |	23  |	8  |	8         |	NULL  | NULL              | 0
 
 
 
