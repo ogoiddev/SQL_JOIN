@@ -143,7 +143,7 @@ Material de estudo - Case para teste seletivo
   Resultado:
   
   CONCAT(Students.first_name, ' ', Students.last_name)
-  :---:
+  :---
   Jorge Nends
   Joana Bela
   Betina Mendes
