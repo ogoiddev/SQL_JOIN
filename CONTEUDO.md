@@ -1,6 +1,3 @@
-# SQL_JOIN
-Material de estudo - Case para teste seletivo
-
 # JOIN - Relacionamento de Tabelas
 
 ## O que vamos aprender?
