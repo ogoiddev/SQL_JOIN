@@ -11,14 +11,14 @@ Material de estudo - Case para teste seletivo
 
 ## Você será capaz de:
 
-  Compreender como utilizar **INNER JOIN**, para combinar dados entre duas ou mais tabelas;
-  Voce também vai aprender os casos de **LEFT JOIN** e **RIGHT JOIN**, também conhecidos como **OUTER JOIN**.
+  * Compreender como utilizar **INNER JOIN**, para combinar dados entre duas ou mais tabelas;
+  * Voce também vai aprender os casos de **LEFT JOIN** e **RIGHT JOIN**, também conhecidos como **OUTER JOIN**.
   E alguns exemplos de **SELF JOIN**, **FULL JOIN**, **SEMI JOIN** e **ANTI JOIN**. 
 
 
 ## Porque isso é importante?
 
-  A *cláusula* **JOIN** permite que os dados de duas ou mais tabelas ou entre dados de uma mesma tabela sejam combinados com base na relação existente ou referenciada. Com esse conhecimento você consegue atender a necessidades especificas do seu cliente e otimizar tarefas importantes do seu dia a dia.
+  A *cláusula* **JOIN** permite que os dados de duas ou mais tabelas ou entre dados de uma mesma tabela sejam combinados com base na relação existente ou um valor referenciado. Com esse conhecimento você consegue atender a necessidades especificas do seu cliente e otimizar tarefas importantes do seu dia a dia.
 
 
 ## Conteúdos
@@ -141,7 +141,7 @@ Material de estudo - Case para teste seletivo
   ```
 
   Resultado:
-  
+
   CONCAT(Students.first_name, ' ', Students.last_name)
   :---
   Jorge Nends
@@ -158,4 +158,3 @@ Material de estudo - Case para teste seletivo
   
 
 ## Recursos Adicionais
-
