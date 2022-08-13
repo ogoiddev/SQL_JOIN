@@ -180,7 +180,7 @@ Material de estudo - Case para teste seletivo
 
  #### INNER JOIN
 
- [](MARKDOWN_DOC.md)
+ [](INNER_JOIN.jpg)
 
  Execute a query abaixo e repare que sem o **ON** do **INNER JOIN**, ou seja, sem um relacionamento declarado:
 
