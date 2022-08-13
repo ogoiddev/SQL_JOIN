@@ -155,7 +155,7 @@ Material de estudo - Case para teste seletivo
   **Com ALIAS:**
 
   ```
-  SELECT CONCAT(S.first_name, ' ', S.last_name) AS FullName
+  SELECT CONCAT(S.first_name, ' ', S.last_name) AS 'FullName'
   FROM MySchool.Students AS S
   INNER JOIN MySchool.Exams AS E
   ON S.id = E.student_id
@@ -173,7 +173,7 @@ Material de estudo - Case para teste seletivo
   Betina Mendes
 
 
-  * Repare que além de facilitar o entendimento do código podemos personalizar do nome da Coluna. Então quando voce precisar criar queries mais complexas, ja sabe como facilitar e ou customizar seu código. Legal né!
+  * Repare que além de facilitar o entendimento do código podemos personalizar o nome da Coluna. Então quando você precisar criar queries mais complexas, ja sabe como facilitar e ou customizar seu código. Legal né!
   
   * Agora vamos entender o resultado de um simples INNER JOIN;
 
@@ -182,7 +182,8 @@ Material de estudo - Case para teste seletivo
 
  ![Screenshot](INNER_JOIN.jpg)
 
- Execute a query abaixo:
+
+Execute a query abaixo:
 
   ```
   SELECT * 
@@ -191,21 +192,48 @@ Material de estudo - Case para teste seletivo
   ON S.id = E.student_id;
   ```
 
-  Seu resultado deve sair assim:
+  Seu resultado deve retornar assim:
   
-  id | first_name | last_name | age | id | student_id | score | status            | exam_status
-  :---|	:---      |	:---      |	:---|	:---|	:---      |	:---  |	:---            	| :---
-  1  |	Jorge     |	Nends     |	37  |	1  |	1         |	88    |	Approved	        | 1
-  2  |	Ana       |	Flor      |	23  |	2  |	2         |	78    |	Not approved yet	| 1
-  3  |	Joana     |	Bela      |	33  |	3  |	3         |	98    |	Approved	        | 1
-  4  |	Andre     |	Molina    |	23  |	4  |	4         |	68    |	Not approved yet	| 1
-  5  |	Betina    |	Mendes    |	35  |	5  |	5         |	35    |	Not approved yet	| 1
-  6  |	Carlos    |	Berer     |	31  |	6  |	6         |	NULL  | NULL              | 0
-  7  |	Betina    |	Mendes    |	35  |	7  |	7         |	NULL  | NULL              | 0
-  8  |	Gregor    |	Hands     |	23  |	8  |	8         |	NULL  | NULL              | 0
+  id  | first_name | last_name | age  | id  | student_id | score  | status            | exam_status
+  :---|	:---       |	:---     |:---  |	:---|	:---       |	:---  |	:---            	| :---
+  1   |	Jorge      |	Nends    |	37  |	1   |	1          |	88    |	Approved	        | 1
+  2   |	Ana        |	Flor     |	23  |	2   |	2          |	78    |	Not approved yet	| 1
+  3   |	Joana      |	Bela     |	33  |	3   |	3          |	98    |	Approved	        | 1
+  4   |	Andre      |	Molina   |	23  |	4   |	4          |	68    |	Not approved yet	| 1
+  5   |	Betina     |	Mendes   |	35  |	5   |	5          |	35    |	Not approved yet	| 1
+  6   |	Carlos     |	Berer    |	31  |	6   |	6          |	NULL  | NULL              | 0
+  7   |	Betina     |	Mendes   |	35  |	7   |	7          |	NULL  | NULL              | 0
+  8   |	Gregor     |	Hands    |	23  |	8   |	8          |	NULL  | NULL              | 0
 
 
+Agora digamos que voce precise de uma tabela que retorne o **o Nome Completo** dos alunos que ja realizaram as **provas** e de qual **turma** eles são, repare que vamos renomear os nomes das colunas para a tabela ficar mais *'amigável'*:
 
+Execute a query abaixo e analise o resultado, repare que agora estamos relacionando dados de 3 tabelas diferentes:
+
+  ```
+  SELECT CONCAT(S.first_name, ' ', S.last_name) AS 'Nome Completo', E.score AS 'Nota Final', G.grade AS 'Turma'
+  FROM MySchool.Students as S
+  INNER JOIN MySchool.Exams as E
+  ON S.id = E.student_id
+  INNER JOIN MySchool.Grades as G
+  ON S.id = G.student_id
+  AND E.exam_status = true;
+  ```
+
+  Seu resultado deve retornar assim:
+
+  Nome Completo | Nota Final | Turma
+  :---          | :---       | :---
+  Jorge Nends   |	88         | 5
+  Ana Flor      |	78         | 5
+  Joana Bela    |	98         | 6
+  Andre Molina  |	68         | 6
+  Betina Mendes |	35         | 6
+
+
+Agora você já conheceu o poder do **JOIN**, então vamos nos aprofundar ainda mais nesse conteúdo;
+
+#### LEFT JOIN
 
 
 ## Vamos praticar!
