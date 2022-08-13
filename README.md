@@ -127,7 +127,7 @@ Material de estudo - Case para teste seletivo
   ```
 
 
-  #### Recurso adicional - SQL ALIAS (AS) no MySQL
+  ### Recurso adicional - SQL ALIAS (AS) no MySQL
 
   Para tornar mais fácil ou intuitivo de entender os dados retornados ao realizar uma junção, você pode utilizar a cláusula **AS**, ou seja, um apelido, para renomear uma coluna ou tabela. Veja no exemplo abaixo como utilizar este recurso e analise o resultado:
 
@@ -178,7 +178,7 @@ Material de estudo - Case para teste seletivo
   * Agora vamos entender o resultado de um simples INNER JOIN;
 
 
- #### INNER JOIN
+ ### INNER JOIN
 
  ![Screenshot](INNER_JOIN.jpg)
 
@@ -234,6 +234,10 @@ Execute a query abaixo e analise o resultado, repare que agora estamos relaciona
 Agora você já conheceu o poder do **JOIN**, então vamos nos aprofundar ainda mais nesse conteúdo;
 
 #### LEFT JOIN
+
+![Screenshot](LEFT_JOIN.jpg)
+
+
 
 
 ## Vamos praticar!
