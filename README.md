@@ -12,7 +12,7 @@ Material de estudo - Case para teste seletivo
 ## Você será capaz de:
 
   * Compreender como utilizar **`INNER JOIN`**, para combinar dados entre duas ou mais tabelas;
-  * Voce também vai aprender os casos de **`LEFT JOIN`** e **`RIGHT JOIN`**, para combinar dados entre duas ou mais tabelas, preservando dados de uma das tabelas mesmo nao tendo uma referencia nao atendida;
+  * Voce também vai aprender os casos de **`LEFT JOIN`** e **`RIGHT JOIN`**, para combinar dados entre duas ou mais tabelas, preservando dados de uma das tabelas mesmo tendo uma referencia não atendida;
   
   * Nao deixe de ver os recurso adicionais, voce vai aprender um pouco mais sobre exemplos de **`SELF JOIN`**, **`FULL JOIN`**, **`SEMI JOIN`** e **`ANTI JOIN`** e algumas curiosidades a mais;
 
