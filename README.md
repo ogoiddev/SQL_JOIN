@@ -286,7 +286,7 @@ Execute a query abaixo:
   ```
 
 
-* Repare que simplesmente substituímos o `**LEFT JOIN**` pelo `**RIGHT JOIN**`, dessa vez os dados da tabela da `**'Direita'**` foi preservado e os dados das referencias nao atendidas também retornaram `**Nulos**`;
+* Repare que simplesmente substituímos o **`LEFT JOIN`** pelo **`RIGHT JOIN`**, dessa vez os dados da tabela da **`Direita`** foi preservado e os dados das referencias nao atendidas também retornaram **`Nulos`**;
 
 Seu resultado deve retornar assim:
 
