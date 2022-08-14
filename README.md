@@ -767,7 +767,7 @@ Seu resultado deve retornar assim:
 
   4º - Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário e o alias **Usuário**, uma coluna com todas as musicas da tabela **`tracks`** e com o alias **Musica** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados pelo **ID** do usuário;
 
-    - DICA: Utilize o **RIGHT JOIN** ao referenciar a tabela **tracks**.
+  * DICA: Utilize o **RIGHT JOIN** ao referenciar a tabela **tracks**.
 
 
   5º - 
@@ -782,7 +782,7 @@ Seu resultado deve retornar assim:
 
   1º - Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna o nome das músicas que ele reproduziu com o alias **`Musica`**, na terceira coluna o nome do album da musica com o alias **`Album`**, na quarta coluna o nome do artista com o alias **`Artista`** e na ultima coluna a data e hora que a musica foi reproduzida com o alias **`Reproduzida em`**;
 
-  
+
 
 
 
