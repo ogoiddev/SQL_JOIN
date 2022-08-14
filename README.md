@@ -5,20 +5,20 @@ Material de estudo - Case para teste seletivo
 
 ## O que vamos aprender?
 
-  * Olá, hoje você vai aprender a utilizar a *cláusula* **JOIN**;
-    - Com o **JOIN** voce pode combinar dados entre tabelas relacionadas ou até mesmo entre dados de uma única tabela de um determinado banco de dados, afim de gerar uma nova tabela personalizada conforme a sua necessidade;
+  * Olá, hoje você vai aprender a utilizar a *cláusula* **`JOIN`**;
+    - Com o **`JOIN`** voce pode combinar dados entre tabelas relacionadas ou até mesmo entre dados de uma única tabela de um determinado banco de dados, afim de gerar uma nova tabela personalizada conforme a sua necessidade;
 
 
 ## Você será capaz de:
 
-  * Compreender como utilizar **INNER JOIN**, para combinar dados entre duas ou mais tabelas;
-  * Voce também vai aprender os casos de **LEFT JOIN** e **RIGHT JOIN**, para combinar dados entre duas ou mais tabelas, preservando dados de uma das tabelas mesmo nao tendo uma referencia nao atendida;
-  * E exemplos de **FULL JOIN**, **SEMI JOIN** e **ANTI JOIN**;
+  * Compreender como utilizar **`INNER JOIN`**, para combinar dados entre duas ou mais tabelas;
+  * Voce também vai aprender os casos de **`LEFT JOIN`** e **`RIGHT JOIN`**, para combinar dados entre duas ou mais tabelas, preservando dados de uma das tabelas mesmo nao tendo uma referencia nao atendida;
+  * E exemplos de **`FULL JOIN`**, **`SEMI JOIN`** e **`ANTI JOIN`**;
 
 
 ## Porque isso é importante?
 
-  A *cláusula* **JOIN** permite que os dados de duas ou mais tabelas ou entre dados de uma mesma tabela sejam combinados com base na relação existente ou um valor referenciado. Com esse conhecimento você consegue atender a necessidades especificas do seu cliente e otimizar tarefas importantes do seu dia a dia;
+  A *cláusula* **`JOIN`** permite que os dados de duas ou mais tabelas ou entre dados de uma mesma tabela sejam combinados com base na relação existente ou um valor referenciado. Com esse conhecimento você consegue atender a necessidades especificas do seu cliente e otimizar tarefas importantes do seu dia a dia;
 
 
 ## Conteúdos
@@ -129,7 +129,7 @@ Material de estudo - Case para teste seletivo
 
   ### Recurso adicional - SQL ALIAS (AS) no MySQL
 
-  Para tornar mais fácil ou intuitivo de entender os dados retornados ao realizar uma junção, você pode utilizar a cláusula **AS**, ou seja, um apelido, para renomear uma coluna ou tabela. Veja no exemplo abaixo como utilizar este recurso e analise o resultado:
+  Para tornar mais fácil ou intuitivo de entender os dados retornados ao realizar uma junção, você pode utilizar a cláusula **`AS`**, ou seja, um apelido, para renomear uma coluna ou tabela. Veja no exemplo abaixo como utilizar este recurso e analise o resultado:
 
   **Sem ALIAS:**
 
@@ -151,7 +151,9 @@ Material de estudo - Case para teste seletivo
   Carlos Berer
   Betina Mendes
 
-  
+
+
+
   **Com ALIAS:**
 
   ```
@@ -185,6 +187,7 @@ Material de estudo - Case para teste seletivo
 
 
 
+
 Execute a query abaixo:
 
   ```
@@ -209,7 +212,10 @@ Execute a query abaixo:
   8   |	Gregor     |	Hands    |	23  |	8   |	8          |	NULL  | NULL              | 0
 
 
-Agora digamos que voce precise de uma tabela que retorne o **o Nome Completo** dos alunos que ja realizaram as **provas** e de qual **turma** eles são, repare que vamos renomear os nomes das colunas para a tabela ficar mais *'amigável'*;
+
+
+Agora digamos que voce precise de uma tabela que retorne o **`Nome Completo`** dos alunos que ja realizaram as **`provas`** e de qual **`turma`** eles são, repare que vamos renomear os nomes das colunas para a tabela ficar mais amigável;
+
 
 Execute a query abaixo e analise o resultado, repare que agora estamos relacionando dados de 3 tabelas diferentes:
 
@@ -234,7 +240,8 @@ Execute a query abaixo e analise o resultado, repare que agora estamos relaciona
   Betina Mendes |	35         | 6
 
 
-Agora você já conheceu o poder do **JOIN**, então vamos nos aprofundar ainda mais nesse conteúdo;
+Agora você já conheceu o poder do **`JOIN`**, então vamos nos aprofundar ainda mais nesse conteúdo;
+
 
 
 ### LEFT JOIN
@@ -253,7 +260,7 @@ Execute a query abaixo:
   ```
 
 
-* Repare que dessa vez os dados da tabela da **'Esquerda'** foi preservado mesmo nao sendo verdadeira a referencia da **'turma 5'** que escrevemos no código, as referencias nao atendidas retornam com os valores **Nulos**;
+* Repare que dessa vez os dados da tabela da **`Esquerda`** foi preservado mesmo nao sendo verdadeira a referencia da **`turma 5`** que escrevemos no código, as referencias nao atendidas retornam com os valores **`Nulos`**;
 
 Seu resultado deve retornar assim:
 
@@ -267,6 +274,7 @@ Seu resultado deve retornar assim:
   6	  | Carlos     |	Berer    |	31  |	NULL | NULL  | NULL
   7	  | Betina     |	Mendes   |	35  |	3    |	5	   | 7
   8	  | Gregor     |	Hands    |	23  |	4    |	5	   | 8
+
 
 
 
@@ -286,7 +294,7 @@ Execute a query abaixo:
   ```
 
 
-* Repare que simplesmente substituímos o **`LEFT JOIN`** pelo **`RIGHT JOIN`**, dessa vez os dados da tabela da **`Direita`** foi preservado e os dados das referencias nao atendidas também retornaram **`Nulos`**;
+* Repare que simplesmente substituímos o **`LEFT JOIN`** pelo **`RIGHT JOIN`**, dessa vez os dados da tabela da **`Direita`** foi preservado e os dados das referencias nao atendidas também retornaram, mas dessa vez com valores **`Nulos`**;
 
 Seu resultado deve retornar assim:
 
@@ -303,26 +311,31 @@ Seu resultado deve retornar assim:
 
 
 
+
 ## Exercícios de fixação
 
 
 * Utilizando o INNER JOIN:
 
 
-1 - Construa uma query que retorne todas as colunas da tabela `*Students*` e uma coluna com o `**status**` de aprovação da tabela`**Exams**`, dos alunos que tenham mais de 30 anos.
+1 - Construa uma query que retorne todas as colunas da tabela *`Students`* e uma coluna com o **`status`** de aprovação com o alias **`Aprovado`**  da tabela**`Exams`**, dos alunos que tenham mais de 30 anos;
+
+DICA: Para selecionar as colunas conforme o requisito voce deve escrever algo assim: **`SELECT MySchool.Students.*, MySchool.Exams.exam_status as 'Aprovado' FROM ...`**
+
+* Repare na sintaxe da dica, em como selecionamos as colunas da tabela Students.
 
 
 
-2 - Construa uma query que retorne uma coluna da tabela `*Students*` com o Nome Completo do aluno, uma coluna da tabela Exams com o `*status*` de aprovação do aluno, somente dos alunos que ja realizaram a prova `(*exam_status*)` e uma coluna da tabela `*Grades*` com a turma que ele pertence.
+2 - Construa uma query que retorne uma coluna da tabela *`Students`* com o Nome Completo do aluno com o alias **`Nome Completo`**, uma coluna da tabela **`Exams`** com o *`status`* de aprovação do aluno com o alias **`Aprovado`**, somente dos alunos que ja realizaram a prova (*`exam_status`*) e uma coluna da tabela *`Grades`* com o alias **`Turma`** da turma que ele pertence;
 
 
 
 * Utilizando o LEFT JOIN:
 
 
-1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela `*Exams*` dos alunos que ja realizaram as provas.
+1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que ja realizaram as provas;
 
-2 - Construa uma query que retorne uma coluna da tabela `*Student*` com o Nome Completo do aluno e todas as colunas da tabela `*Exams*`.
+2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o Nome Completo do aluno e todas as colunas da tabela *`Exams`*;
 
 
 
@@ -632,9 +645,9 @@ Seu resultado deve retornar assim:
 
 ### Exercícios
 
-  1º - Elabore uma query que retorne todas as colunas da tabela **artists** e todas as colunas da tabela **albums** relacionadas ao id do Artista;
+  1º - Elabore uma query que retorne todas as colunas da tabela **`artists`** e todas as colunas da tabela **`albums`** relacionadas ao id do Artista;
 
-  2º - Elabore uma query que retorne uma coluna do nome do artista com o alias **Artista** da tabela **artists**, uma coluna do nome do album com o alias **Album** da tabela **albums** e uma coluna do nome da musica com o alias **Musica** da tabela **tracks**, com base nos dados relacionados;
+  2º - Elabore uma query que retorne uma coluna do nome do artista com o alias **`Artista`** da tabela **`artists`**, uma coluna do nome do album com o alias **`Album`** da tabela **`albums`** e uma coluna do nome da musica com o alias **`Musica`** da tabela **`tracks`**, com base nos dados relacionados;
 
 
 
