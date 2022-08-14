@@ -354,6 +354,11 @@ DICA: Para selecionar as colunas conforme o requisito voce deve escrever algo as
   Para os nossos exercícios iremos utilizar um banco de dados que apelidamos de SpotifyClone, um exemplo de banco de dados de um aplicativo de musicas.
 
 
+  Observe o diagrama do nosso banco de dados:
+
+  ![Screenshot](SpotifyClone_Diagram.jpg)
+
+
 
   ***Execute o SQLScript abaixo no seu MYSQL Workbench ou no software de sua preferência:***
 
