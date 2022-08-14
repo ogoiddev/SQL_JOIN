@@ -6,7 +6,7 @@
   ### Utilizando o INNER JOIN:
 
 
-  1 - Construa uma query que retorne todas as colunas da tabela *`Students`* e uma coluna com o **`status`** de aprovação da tabela**`Exams`**, dos alunos que tenham mais de 30 anos;
+  1 - Construa uma query que retorne todas as colunas da tabela *`Students`* e uma coluna com o **`status`** de aprovação da tabela **`Exams`**, dos alunos que tenham mais de 30 anos;
 
   * Solução:
 

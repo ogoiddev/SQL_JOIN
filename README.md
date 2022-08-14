@@ -220,7 +220,7 @@ Execute a query abaixo:
 
 
 
-Agora digamos que voce precise de uma tabela que retorne o **`Nome Completo`** dos alunos que ja realizaram as **`provas`** e de qual **`turma`** eles são, repare que vamos renomear os nomes das colunas para a tabela ficar mais amigável;
+Agora digamos que voce precise de uma tabela que retorne o **`Nome Completo`** dos alunos que ja realizaram as **`provas`** e de qual **`Turma`** eles são, repare que vamos renomear os nomes das colunas para a tabela ficar mais amigável;
 
 
 Execute a query abaixo e analise o resultado, repare que agora estamos relacionando dados de 3 tabelas diferentes:
@@ -317,6 +317,10 @@ Seu resultado deve retornar assim:
 
 
 
+*** Aprendemos bastante coisa com poucos comandos ate aqui nao?!. Com este conteúdo voce consegue atender a enumeras necessidades e otimizar seu raciocínio de desenvolvimento. Agora vamos exercitar e fixar esse aprendizado?**
+
+*** É muito importante se atentar a cada detalhes do que mostramos para garantir uma boa abstração do conteúdo.**
+
 
 ## Exercícios de fixação
 
@@ -324,11 +328,11 @@ Seu resultado deve retornar assim:
 ### Utilizando o INNER JOIN:
 
 
-1 - Construa uma query que retorne todas as colunas da tabela *`Students`* e uma coluna com o **`status`** de aprovação com o alias **`Aprovado`**  da tabela**`Exams`**, dos alunos que tenham mais de 30 anos;
+1 - Construa uma query que retorne todas as colunas da tabela *`Students`* e uma coluna com o **`status`** de aprovação com o alias **`Aprovado`**  da tabela **`Exams`**, dos alunos que tenham mais de 30 anos;
 
 * DICA: Para selecionar as colunas conforme o requisito, voce deve escrever algo assim: **`SELECT MySchool.Students.*, MySchool.Exams.exam_status as 'Aprovado' FROM ...`**
 
-* Repare na sintaxe da dica, em como selecionamos as colunas da tabela Students.
+* Repare na sintaxe da dica, em como selecionamos as colunas da tabela Students, existem outras formas, mas assim você ja vai ficar bem orientado ao contexto. Outro ponto, a coluna **`exam_status`** tem seus valores **`booleanos`** por padrão, quando verdadeiro retorna **'1'** e quando falso retorna **'0'**
 
 
 
