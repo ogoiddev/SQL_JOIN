@@ -317,9 +317,9 @@ Seu resultado deve retornar assim:
 
 
 
-*** Aprendemos bastante coisa com poucos comandos ate aqui nao?!. Com este conteúdo voce consegue atender a enumeras necessidades e otimizar seu raciocínio de desenvolvimento. Agora vamos exercitar e fixar esse aprendizado?**
+**- * Aprendemos bastante coisa com poucos comandos ate aqui nao?!. Com este conteúdo voce consegue atender a enumeras necessidades e otimizar seu raciocínio de desenvolvimento. Agora vamos exercitar e fixar esse aprendizado?**
 
-*** É muito importante se atentar a cada detalhes do que mostramos para garantir uma boa abstração do conteúdo.**
+**- * É muito importante se atentar a cada detalhes do que mostramos para garantir uma boa abstração do conteúdo.**
 
 
 ## Exercícios de fixação
