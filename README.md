@@ -25,7 +25,7 @@ Material de estudo - Case para teste seletivo
 
   Para melhor fixar este conteúdo, recomendamos que voce acompanhe e execute na pratica os exemplos que vamos mostrar;
 
-  Criamos um banco de dados fictício de uma escola com apenas 3 tabelas para você exercitar;
+  Criamos um banco de dados fictício de uma escola com apenas 3 tabelas para você exercitar e melhor absorver este conteúdo;
 
   
   ***Execute o SQLScript abaixo no seu MYSQL Workbench ou no software de sua preferência:***
@@ -641,7 +641,7 @@ Seu resultado deve retornar assim:
 ## Recursos Adicionais
 
 
-  Abaixo separamos algumas referencias para voce se aprofundar ainda mais e conhecer todos os recusos possível que o JOIN pode oferecer e também separamos o link da documentação do MySql e Mysql Workbench para deixar voce completamente informado;
+  Abaixo separamos algumas referencias para voce se aprofundar ainda mais e conhecer todos os recursos possíveis que o JOIN pode oferecer e também separamos o link da documentação do MySql e do Mysql Workbench para deixar voce muito bem informado;
 
 
 
