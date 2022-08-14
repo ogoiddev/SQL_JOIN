@@ -24,7 +24,8 @@
 ## O que vamos aprender?
 
   * Olá, hoje você vai aprender a utilizar a *cláusula* **`JOIN`**;
-    - Com o **`JOIN`** você pode combinar dados entre tabelas relacionais ou até mesmo entre dados de uma única tabela de um determinado banco de dados, afim de gerar uma nova tabela personalizada conforme a sua necessidade;
+  
+  * Com o **`JOIN`** você pode combinar dados entre tabelas relacionais ou até mesmo entre dados de uma única tabela, afim de gerar uma tabela personalizada conforme a sua necessidade;
 
 
 ## Você será capaz de:
