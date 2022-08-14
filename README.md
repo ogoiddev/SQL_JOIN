@@ -325,7 +325,7 @@ Seu resultado deve retornar assim:
 
 1 - Construa uma query que retorne todas as colunas da tabela *`Students`* e uma coluna com o **`status`** de aprovação com o alias **`Aprovado`**  da tabela**`Exams`**, dos alunos que tenham mais de 30 anos;
 
-DICA: Para selecionar as colunas conforme o requisito voce deve escrever algo assim: **`SELECT MySchool.Students.*, MySchool.Exams.exam_status as 'Aprovado' FROM ...`**
+* DICA: Para selecionar as colunas conforme o requisito, voce deve escrever algo assim: **`SELECT MySchool.Students.*, MySchool.Exams.exam_status as 'Aprovado' FROM ...`**
 
 * Repare na sintaxe da dica, em como selecionamos as colunas da tabela Students.
 
@@ -333,12 +333,18 @@ DICA: Para selecionar as colunas conforme o requisito voce deve escrever algo as
 
 2 - Construa uma query que retorne uma coluna da tabela *`Students`* com o Nome Completo do aluno com o alias **`Nome Completo`**, uma coluna da tabela **`Exams`** com o *`status`* de aprovação do aluno com o alias **`Aprovado`**, somente dos alunos que ja realizaram a prova (*`exam_status`*) e uma coluna da tabela *`Grades`* com o alias **`Turma`** da turma que ele pertence;
 
+* DICA: Reveja o conteúdo onde trouxemos um exemplo de como 'CONCATENAR' colunas ao escrever sua query!
+
 
 
 * Utilizando o LEFT JOIN:
 
 
-1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que ja realizaram as provas;
+1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que ja realizaram as provas com o alias **`Prova Entregue`**;
+
+* DICA: A coluna **`exam_status`** tem seus valores **`booleanos`** por padrão, quando verdadeiro retorna **'1'** e quando falso retorna **'0'**. Com o operador **`IF()`**, isso mesmo, também temos o IF no SQL, assim podemos personalizar também os valores. Então ao indicar sua coluna no SELECT da query, voce pode escrever algo assim: **`IF(MySchool.Exams.exam_status = 1, 'Sim', 'Não')`**. Legal ne!
+
+
 
 2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o Nome Completo do aluno e todas as colunas da tabela *`Exams`*;
 
