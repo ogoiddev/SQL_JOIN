@@ -3,7 +3,7 @@
 ## Exercícios de Fixação
 
 
-  * Utilizando o INNER JOIN:
+  ### Utilizando o INNER JOIN:
 
 
   1 - Construa uma query que retorne todas as colunas da tabela *`Students`* e uma coluna com o **`status`** de aprovação da tabela**`Exams`**, dos alunos que tenham mais de 30 anos;
@@ -34,17 +34,79 @@
     ```
 
 
-  * Utilizando o LEFT JOIN:
+  ### Utilizando o LEFT JOIN:
 
 
   1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que ja realizaram as provas;
 
   * Solução:
 
-  2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o Nome Completo do aluno e todas as colunas da tabela *`Exams`*;
+    ```
+    SELECT MySchool.Students.*, IF(MySchool.Exams.exam_status = 1, 'Sim', 'Nao') as 'Prova Entregue'
+    FROM MySchool.Students
+    LEFT JOIN MySchool.Exams
+    ON Exams.exam_status = true AND Exams.student_id = Students.id;
+    ```
+
+    - sem o **`IF()`**
+
+      ```
+      SELECT MySchool.Students.*, MySchool.Exams.exam_status as 'Prova Entregue'
+      FROM MySchool.Students
+      LEFT JOIN MySchool.Exams
+      ON Exams.exam_status = true AND Exams.student_id = Students.id;
+      ```
+
+  2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o alias **`Nome Completo`** com o nome aluno e todas as colunas da tabela *`Exams`*, relacionando apenas quem ja fez a **Prova**;
+
 
   * Solução:
 
+    ```
+    SELECT CONCAT(S.first_name, ' ', S.last_name) AS 'Nome Completo', E.*
+    FROM MySchool.Students AS S
+    LEFT JOIN MySchool.Exams AS E
+    ON E.exam_status = true AND S.id = E.student_id;
+    ```
+
+
+  ### Utilizando o RIGHT JOIN:
+
+
+  Para o RIGHT JOIN vamos apenas substituir o LEFT JOIN por RIGHT JOIN dos mesmos exercícios que fizemos acima. O importante e perceber e abstrair com bastante atenção. Bora ver?!
+
+  
+  1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que ja realizaram as provas;
+
+  * Solução:
+
+    ```
+    SELECT MySchool.Students.*, IF(MySchool.Exams.exam_status = 1, 'Sim', 'Nao') as 'Prova Entregue'
+    FROM MySchool.Students
+    RIGHT JOIN MySchool.Exams
+    ON Exams.exam_status = true AND Exams.student_id = Students.id;
+    ```
+
+    - sem o **`IF()`**
+
+      ```
+      SELECT MySchool.Students.*, MySchool.Exams.exam_status as 'Prova Entregue'
+      FROM MySchool.Students
+      RIGHT JOIN MySchool.Exams
+      ON Exams.exam_status = true AND Exams.student_id = Students.id;
+      ```
+
+  2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o alias **`Nome Completo`** com o nome aluno e todas as colunas da tabela *`Exams`*, relacionando apenas quem ja fez a **Prova**;
+
+
+  * Solução:
+
+    ```
+    SELECT CONCAT(S.first_name, ' ', S.last_name) AS 'Nome Completo', E.*
+    FROM MySchool.Students AS S
+    RIGHT JOIN MySchool.Exams AS E
+    ON E.exam_status = true AND S.id = E.student_id;
+    ```
 
 
 ## Exercícios

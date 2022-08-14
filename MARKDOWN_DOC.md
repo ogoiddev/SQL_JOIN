@@ -80,6 +80,6 @@ Você pode dizer a GitHub para ignorar (ou sair) a formatação do Markdown usan
 
 Vamos renomear \*our-new-project\* para \*our-old-project\*.
 
-Caractere com escape renderizado
+Carácter com escape renderizado
 
 

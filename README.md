@@ -13,7 +13,8 @@ Material de estudo - Case para teste seletivo
 
   * Compreender como utilizar **`INNER JOIN`**, para combinar dados entre duas ou mais tabelas;
   * Voce também vai aprender os casos de **`LEFT JOIN`** e **`RIGHT JOIN`**, para combinar dados entre duas ou mais tabelas, preservando dados de uma das tabelas mesmo nao tendo uma referencia nao atendida;
-  * E exemplos de **`FULL JOIN`**, **`SEMI JOIN`** e **`ANTI JOIN`**;
+  
+  * Nao deixe de ver os recurso adicionais, voce vai aprender um pouco mais sobre exemplos de **`SELF JOIN`**, **`FULL JOIN`**, **`SEMI JOIN`** e **`ANTI JOIN`** e algumas curiosidades a mais;
 
 
 ## Porque isso é importante?
@@ -342,17 +343,23 @@ Seu resultado deve retornar assim:
 
 1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que ja realizaram as provas com o alias **`Prova Entregue`**;
 
-* DICA: A coluna **`exam_status`** tem seus valores **`booleanos`** por padrão, quando verdadeiro retorna **'1'** e quando falso retorna **'0'**. Com o operador **`IF()`**, isso mesmo, também temos o IF no SQL, assim podemos personalizar também os valores. Então ao indicar sua coluna no SELECT da query, voce pode escrever algo assim: **`IF(MySchool.Exams.exam_status = 1, 'Sim', 'Não')`**. Legal ne!
+* DICA (opcional): A coluna **`exam_status`** tem seus valores **`booleanos`** por padrão, quando verdadeiro retorna **'1'** e quando falso retorna **'0'**. Com o operador **`IF()`**, isso mesmo, também temos o IF no SQL, assim podemos personalizar também os valores. Então ao indicar sua coluna no SELECT da query, voce pode escrever algo assim: **`IF(MySchool.Exams.exam_status = 1, 'Sim', 'Não')`**. Legal ne! - Mas lembra também que quando falamos sobre **LEFT JOIN** em quando nao ha dados relacionados ele preserva os valores da tabela da **Esquerda** e trás os valores nulos? Então, pratique essa query com o **IF()** que recomendamos e **sem** ele para ver a diferença.
 
 
 
-2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o Nome Completo do aluno e todas as colunas da tabela *`Exams`*;
+2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o alias **`Nome Completo`** com o nome aluno e todas as colunas da tabela *`Exams`*, relacionando apenas quem ja fez a **Prova**;
 
-
+* DICA: Reveja o conteúdo onde trouxemos um exemplo de como 'CONCATENAR' colunas ao escrever sua query!
 
 ### Utilizando o RIGHT JOIN:
 
+  Para o RIGHT JOIN vamos apenas substituir o LEFT JOIN por RIGHT JOIN dos mesmos exercícios que fizemos acima. O importante e perceber e abstrair com bastante atenção. Bora ver?!
 
+  ----------------------------------------------------------------
+
+  * Muito bem, neste momento voce ja esta craque no assunto e pronto para exercitar todos esse conhecimento. Se você teve dificuldades para construir esses exercícios de fixação, de uma olhada no Gabarito que deixamos pra voce, vai ajudar a ficar ainda mais a vontade com o conteúdo.
+
+  * Pronto para exercitar seu aprendizado?! #vqv :rocket:
 
 ## Vamos praticar!
 
