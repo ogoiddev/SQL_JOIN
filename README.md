@@ -286,7 +286,7 @@ Execute a query abaixo:
   ```
 
 
-* Repare que simplesmente substituímos o **LEFT JOIN** pelo **RIGHT JOIN**, dessa vez os dados da tabela da **'Direita'** foi preservado e os dados das referencias nao atendidas também retornaram **Nulos**;
+* Repare que simplesmente substituímos o `**LEFT JOIN**` pelo `**RIGHT JOIN**`, dessa vez os dados da tabela da `**'Direita'**` foi preservado e os dados das referencias nao atendidas também retornaram `**Nulos**`;
 
 Seu resultado deve retornar assim:
 
@@ -309,19 +309,20 @@ Seu resultado deve retornar assim:
 * Utilizando o INNER JOIN:
 
 
-1 - Construa uma query que retorne todas as colunas da tabela *Students* e uma coluna da tabela Exams com as notas dos alunos que tenham mais de 30 anos
+1 - Construa uma query que retorne todas as colunas da tabela `*Students*` e uma coluna com o `**status**` de aprovação da tabela`**Exams**`, dos alunos que tenham mais de 30 anos.
 
 
-2 - Construa uma query que retorne uma coluna da tabela *Students* com o Nome Completo do aluno, uma coluna da tabela Exams com o *status* de aprovação do aluno, somente dos alunos que ja realizaram a prova (*exam_status*) e uma coluna da tabela *Grades* com a turma que ele pertence.
+
+2 - Construa uma query que retorne uma coluna da tabela `*Students*` com o Nome Completo do aluno, uma coluna da tabela Exams com o `*status*` de aprovação do aluno, somente dos alunos que ja realizaram a prova `(*exam_status*)` e uma coluna da tabela `*Grades*` com a turma que ele pertence.
 
 
 
 * Utilizando o LEFT JOIN:
 
 
-1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *Exams* dos alunos que ja realizaram as provas.
+1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela `*Exams*` dos alunos que ja realizaram as provas.
 
-2 - Construa uma query que retorne uma coluna da tabela *Student* com o Nome Completo do aluno e todas as colunas da tabela *Exams*.
+2 - Construa uma query que retorne uma coluna da tabela `*Student*` com o Nome Completo do aluno e todas as colunas da tabela `*Exams*`.
 
 
 
