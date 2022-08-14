@@ -27,6 +27,11 @@ Material de estudo - Case para teste seletivo
 
   Criamos um banco de dados fictício de uma escola com apenas 3 tabelas para você exercitar e melhor absorver este conteúdo;
 
+
+  Observe o diagrama do nosso banco de dados:
+
+  ![Screenshot](MySchool_Diagram.jpg)
+
   
   ***Execute o SQLScript abaixo no seu MYSQL Workbench ou no software de sua preferência:***
 
