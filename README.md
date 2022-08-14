@@ -1,35 +1,54 @@
 # SQL_JOIN
-Material de estudo - Case para teste seletivo
+
+  Material de estudo - Case para teste seletivo
 
 # JOIN - Relacionamento de Tabelas
+
+## Sumário
+
+- O que vamos aprender?
+
+- Conteúdos
+
+  - INNER JOIN
+  - LEFT JOIN
+  - RIGHT JOIN
+
+- Exercícios de fixação
+
+- Vamos praticar!
+
+- Recursos Adicionais
+
 
 ## O que vamos aprender?
 
   * Olá, hoje você vai aprender a utilizar a *cláusula* **`JOIN`**;
-    - Com o **`JOIN`** voce pode combinar dados entre tabelas relacionadas ou até mesmo entre dados de uma única tabela de um determinado banco de dados, afim de gerar uma nova tabela personalizada conforme a sua necessidade;
+    - Com o **`JOIN`** você pode combinar dados entre tabelas relacionais ou até mesmo entre dados de uma única tabela de um determinado banco de dados, afim de gerar uma nova tabela personalizada conforme a sua necessidade;
 
 
 ## Você será capaz de:
 
-  * Compreender como utilizar **`INNER JOIN`**, para combinar dados entre duas ou mais tabelas;
-  * Voce também vai aprender os casos de **`LEFT JOIN`** e **`RIGHT JOIN`**, para combinar dados entre duas ou mais tabelas, preservando dados de uma das tabelas mesmo tendo uma referencia não atendida;
+  * Compreender a como utilizar o **`INNER JOIN`**, para combinar dados entre duas ou mais tabelas;
+
+  * Voce também vai aprender a usar o **`LEFT JOIN`** e **`RIGHT JOIN`**, para combinar dados entre duas ou mais tabelas, preservando os dados de uma das tabela mesmo tendo uma referencia não atendida;
   
-  * Nao deixe de ver os recurso adicionais, voce vai aprender um pouco mais sobre exemplos de **`SELF JOIN`**, **`FULL JOIN`**, **`SEMI JOIN`** e **`ANTI JOIN`** e algumas curiosidades a mais;
+  * Não deixe de ver os recursos adicionais, lá você vai aprender sobre **`SELF JOIN`**, **`FULL JOIN`**, **`SEMI JOIN`** e **`ANTI JOIN`** e outras curiosidades;
 
 
 ## Porque isso é importante?
 
-  A *cláusula* **`JOIN`** permite que os dados de duas ou mais tabelas ou entre dados de uma mesma tabela sejam combinados com base na relação existente ou um valor referenciado. Com esse conhecimento você consegue atender a necessidades especificas do seu cliente e otimizar tarefas importantes do seu dia a dia;
+  A *cláusula* **`JOIN`** serve para combinar dados entre duas ou mais tabelas e também associar dados entre colunas de uma única tabela. O retorno dessa combinação gera uma tabela única e personalizada. Com esse conhecimento você consegue atender a necessidades específicas do seu cliente e otimizar tarefas importantes do seu dia a dia;
 
 
 ## Conteúdos
 
-  Para melhor fixar este conteúdo, recomendamos que voce acompanhe e execute na pratica os exemplos que vamos mostrar;
+  Para melhor fixar este conteúdo, recomendamos que você acompanhe e execute na prática os exemplos que vamos mostrar;
 
-  Criamos um banco de dados fictício de uma escola com apenas 3 tabelas para você exercitar e melhor absorver este conteúdo;
+  Criamos um banco de dados de uma escola fictícia, com apenas 3 tabelas para você exercitar e absorver este conteúdo. Segue o script para você copiar logo abaixo;
 
 
-  Observe o diagrama do nosso banco de dados:
+  Observe o diagrama desse banco de dados que criamos para você estudar:
 
   ![Screenshot](MySchool_Diagram.jpg)
 
@@ -133,66 +152,19 @@ Material de estudo - Case para teste seletivo
   ```
 
 
-  ### Recurso adicional - SQL ALIAS (AS) no MySQL
+  -- ------------------------------
 
-  Para tornar mais fácil ou intuitivo de entender os dados retornados ao realizar uma junção, você pode utilizar a cláusula **`AS`**, ou seja, um apelido, para renomear uma coluna ou tabela. Veja no exemplo abaixo como utilizar este recurso e analise o resultado:
+  ### INNER JOIN
 
-  **Sem ALIAS:**
-
-  ```
-  SELECT CONCAT(Students.first_name, ' ', Students.last_name) 
-  FROM MySchool.Students
-  INNER JOIN MySchool.Exams
-  ON MySchool.Students.id = MySchool.Exams.student_id
-  WHERE MySchool.Students.age > 30;
-  ```
-
-  **Resultado:**
-
-  CONCAT(Students.first_name, ' ', Students.last_name)
-  :---
-  Jorge Nends
-  Joana Bela
-  Betina Mendes
-  Carlos Berer
-  Betina Mendes
-
-
-
-
-  **Com ALIAS:**
-
-  ```
-  SELECT CONCAT(S.first_name, ' ', S.last_name) AS 'FullName'
-  FROM MySchool.Students AS S
-  INNER JOIN MySchool.Exams AS E
-  ON S.id = E.student_id
-  WHERE S.age > 30;
-  ```
-
-  **Resultado:**
-
-  FullName
-  :---
-  Jorge Nends
-  Joana Bela
-  Betina Mendes
-  Carlos Berer
-  Betina Mendes
-
-
-  * Repare que além de facilitar o entendimento do código podemos personalizar o nome da Coluna. Então quando você precisar criar queries mais complexas, ja sabe como facilitar e ou customizar seu código. Legal né!;
-  
-  * Agora vamos entender o resultado de um simples INNER JOIN;
-
-
-
- ### INNER JOIN
+  * Combinando dados entre duas ou mais tabelas
 
  ![Screenshot](INNER_JOIN.jpg)
 
 
+  -- ------------------------------
 
+
+* Vamos entender na prática o resultado de um simples INNER JOIN;
 
 Execute a query abaixo:
 
@@ -220,10 +192,77 @@ Execute a query abaixo:
 
 
 
-Agora digamos que voce precise de uma tabela que retorne o **`Nome Completo`** dos alunos que ja realizaram as **`provas`** e de qual **`Turma`** eles são, repare que vamos renomear os nomes das colunas para a tabela ficar mais amigável;
+* Repare nas informações das tabelas que foram associadas e como esses dados retornaram;
+
+-- ------------------------------
+
+### Recurso adicional utilizado - SQL ALIAS (AS) no MySQL
+
+  Para tornar mais fácil ou intuitivo de entender os dados retornados ao realizar uma junção, você pode utilizar a cláusula **`AS`**, ou seja, um apelido, para renomear um título de uma coluna ou um nome de uma tabela ao escrever seu código. Veja no exemplo abaixo como utilizar este recurso:
+
+  -- ------------------------------
+
+  **Sem ALIAS:**
+
+  ```
+  SELECT CONCAT(Students.first_name, ' ', Students.last_name) 
+  FROM MySchool.Students
+  INNER JOIN MySchool.Exams
+  ON MySchool.Students.id = MySchool.Exams.student_id
+  WHERE MySchool.Students.age > 30;
+  ```
+
+  **Resultado:**
+
+  CONCAT(Students.first_name, ' ', Students.last_name)
+  :---
+  Jorge Nends
+  Joana Bela
+  Betina Mendes
+  Carlos Berer
+  Betina Mendes
 
 
-Execute a query abaixo e analise o resultado, repare que agora estamos relacionando dados de 3 tabelas diferentes:
+  * Veja como ficou o título da coluna e a escrita do código;
+
+
+-- ------------------------------
+
+  **Com ALIAS:**
+
+  ```
+  SELECT CONCAT(S.first_name, ' ', S.last_name) AS 'FullName'
+  FROM MySchool.Students AS S
+  INNER JOIN MySchool.Exams AS E
+  ON S.id = E.student_id
+  WHERE S.age > 30;
+  ```
+
+  **Resultado:**
+
+  FullName
+  :---
+  Jorge Nends
+  Joana Bela
+  Betina Mendes
+  Carlos Berer
+  Betina Mendes
+
+  -- ------------------------------
+
+
+  * Repare que além de facilitar o entendimento do código podemos personalizar o nome da Coluna. Legal né!
+  
+
+  -- ------------------------------
+
+* Vamos ver mais um exemplo com **`INNER JOIN`**:
+
+Agora digamos que voce precise de uma tabela que retorne o **`Nome Completo`** dos alunos que já realizaram as **`provas`** e de qual **`Turma`** eles são, repare que vamos renomear os nomes das colunas para a tabela ficar mais amigável;
+
+
+Execute a query abaixo e analise o resultado, repare que agora estamos relacionando dados entre 3 tabelas diferentes:
+
 
   ```
   SELECT CONCAT(S.first_name, ' ', S.last_name) AS 'Nome Completo', E.score AS 'Nota Final', G.grade AS 'Turma'
@@ -246,13 +285,21 @@ Execute a query abaixo e analise o resultado, repare que agora estamos relaciona
   Betina Mendes |	35         | 6
 
 
-Agora você já conheceu o poder do **`JOIN`**, então vamos nos aprofundar ainda mais nesse conteúdo;
+-- ------------------------------
 
+Agora você já conheceu o poder do **`JOIN`**, então vamos nos aprofundar ainda mais neste conteúdo?!;
 
+-- ------------------------------
 
 ### LEFT JOIN
 
+* Com o **`LEFT JOIN`** associamos dados entre duas ou mais tabelas, preservando todos os dados da tabela da **`Esquerda`**. A tabela da **esquerda** e a primeira tabela que voce chama no código, referenciada no seu **`FROM`**;
+
+
 ![Screenshot](LEFT_JOIN.jpg)
+
+
+* Compare o resultado do exemplo abaixo com as informações do nosso banco de dados;
 
 
 Execute a query abaixo:
@@ -266,7 +313,6 @@ Execute a query abaixo:
   ```
 
 
-* Repare que dessa vez os dados da tabela da **`Esquerda`** foi preservado mesmo nao sendo verdadeira a referencia da **`turma 5`** que escrevemos no código, as referencias nao atendidas retornam com os valores **`Nulos`**;
 
 Seu resultado deve retornar assim:
 
@@ -283,10 +329,20 @@ Seu resultado deve retornar assim:
 
 
 
+* Repare que dessa vez os dados da tabela da **`Esquerda`** foi preservado, mesmo nao sendo verdadeira a referencia dada em **`AND G.grade = 5`** que seria a turma 5. Essas referências nao atendidas retornam com os valores **`Nulos`**;
+
+
+-- ------------------------------
+
 
 ### RIGHT JOIN
 
+* Com o **`RIGHT JOIN`** associamos dados entre duas ou mais tabelas, preservando todos os dados da tabela que esta na **`Direita`**. A tabela da **Direita** é a próxima tabela que você chama no código, a referenciada no seu **`JOIN`** por exemplo;
+
 ![Screenshot](RIGHT_JOIN.jpg)
+
+
+* Compare o resultado do exemplo abaixo com as informações do nosso banco de dados;
 
 
 Execute a query abaixo:
@@ -299,8 +355,6 @@ Execute a query abaixo:
   AND G.grade = 5;
   ```
 
-
-* Repare que simplesmente substituímos o **`LEFT JOIN`** pelo **`RIGHT JOIN`**, dessa vez os dados da tabela da **`Direita`** foi preservado e os dados das referencias nao atendidas também retornaram, mas dessa vez com valores **`Nulos`**;
 
 Seu resultado deve retornar assim:
 
@@ -316,11 +370,17 @@ Seu resultado deve retornar assim:
   NULL | NULL       | NULL      | NULL |	8   |	6     |	6
 
 
+
+* Repare que simplesmente substituímos o **`LEFT JOIN`** pelo **`RIGHT JOIN`**, dessa vez os dados da tabela da **`Direita`** foi preservado, mesmo com referencias nao atendidas, mas dessa vez com valores **`Nulos`**;
+
+
 -- ------------------------------
 
-**- * Aprendemos bastante coisa com poucos comandos ate aqui nao?!. Com este conteúdo voce consegue atender a enumeras necessidades e otimizar seu raciocínio de desenvolvimento. Agora vamos exercitar e fixar esse aprendizado?**
 
-**- * É muito importante se atentar a cada detalhes do que mostramos para garantir uma boa abstração do conteúdo.**
+**-  Aprendemos bastante coisa com poucos comandos até aqui nao? Com este conteúdo você consegue atender a diversas tarefas e otimizar seu raciocínio de desenvolvimento. Agora vamos exercitar e fixar esse aprendizado?**
+
+**-  É muito importante se atentar a cada detalhe do que mostramos para garantir uma boa abstração do conteúdo.**
+
 
 -- ------------------------------
 ## Exercícios de fixação
@@ -331,50 +391,67 @@ Seu resultado deve retornar assim:
 
 1 - Construa uma query que retorne todas as colunas da tabela *`Students`* e uma coluna com o **`status`** de aprovação com o alias **`Aprovado`**  da tabela **`Exams`**, dos alunos que tenham mais de 30 anos;
 
-* DICA: Para selecionar as colunas conforme o requisito, voce deve escrever algo assim: **`SELECT MySchool.Students.*, MySchool.Exams.exam_status as 'Aprovado' FROM ...`**
+* DICA: Para selecionar as colunas conforme o requisito, você deve escrever algo assim: **`SELECT MySchool.Students.*, MySchool.Exams.exam_status as 'Aprovado' FROM ...`**
 
-* Repare na sintaxe da dica, em como selecionamos as colunas da tabela Students, existem outras formas, mas assim você ja vai ficar bem orientado ao contexto. Outro ponto, a coluna **`exam_status`** tem seus valores **`booleanos`** por padrão, quando verdadeiro retorna **'1'** e quando falso retorna **'0'**
+* A coluna **`exam_status`** tem seus valores **`booleanos`** por padrão, quando verdadeiro (TRUE) retorna **'1'** e quando falso (FALSE) retorna **'0'**. Vamos te mostrar uma dica bem legal mais a frente para deixar esses dados mais amigáveis.
 
 
+-- ------------------------------
 
-2 - Construa uma query que retorne uma coluna da tabela *`Students`* com o Nome Completo do aluno com o alias **`Nome Completo`**, uma coluna da tabela **`Exams`** com o *`status`* de aprovação do aluno com o alias **`Aprovado`**, somente dos alunos que ja realizaram a prova (*`exam_status`*) e uma coluna da tabela *`Grades`* com o alias **`Turma`** da turma que ele pertence;
+
+2 - Construa uma query que retorne uma coluna da tabela *`Students`* com o Nome Completo do aluno e com o alias **`Nome Completo`**, uma coluna da tabela **`Exams`** com o *`status`* de aprovação do aluno com o alias **`Aprovado`** somente dos alunos que já realizaram a prova (*`exam_status`*) e uma coluna da tabela *`Grades`* com o alias **`Turma`** com da turma que ele pertence;
+
 
 * DICA: Reveja o conteúdo onde trouxemos um exemplo de como 'CONCATENAR' colunas ao escrever sua query!
 
+
+-- ------------------------------
 
 
 ### Utilizando o LEFT JOIN:
 
 
-1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que ja realizaram as provas com o alias **`Prova Entregue`**;
+1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que já realizaram as provas com o alias **`Prova Entregue`**;
 
-* DICA (opcional): A coluna **`exam_status`** tem seus valores **`booleanos`** por padrão, quando verdadeiro retorna **'1'** e quando falso retorna **'0'**. Com o operador **`IF()`**, isso mesmo, também temos o IF no SQL, assim podemos personalizar também os valores. Então ao indicar sua coluna no SELECT da query, voce pode escrever algo assim: **`IF(MySchool.Exams.exam_status = 1, 'Sim', 'Não')`**. Legal ne! - Mas lembra também que quando falamos sobre **LEFT JOIN** em quando nao ha dados relacionados ele preserva os valores da tabela da **Esquerda** e trás os valores nulos? Então, pratique essa query com o **IF()** que recomendamos e **sem** ele para ver a diferença.
+* DICA: A coluna **`exam_status`** tem seus valores **`booleanos`** por padrão, quando verdadeiro retorna **'1'** e quando falso retorna **'0'**. Com o operador **`IF()`** do SQL, podemos personalizar também os valores. Então ao indicar sua coluna no **SELECT** da query, você pode escrever algo assim: **`IF(MySchool.Exams.exam_status = 1, 'Sim', 'Não')`**. 
+  
+* Lembra também que quando falamos do **LEFT JOIN** sobre preservar ele dados da tabela da **Esquerda**? Então, pratique essa query com o **IF()** que recomendamos e **sem** ele para ver a diferença.
 
 
+-- ------------------------------
 
-2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o alias **`Nome Completo`** com o nome aluno e todas as colunas da tabela *`Exams`*, relacionando apenas quem ja fez a **Prova**;
+
+2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o alias **`Nome Completo`** com o nome aluno e todas as colunas da tabela *`Exams`*, buscando apenas quem já fez a **Prova**;
 
 * DICA: Reveja o conteúdo onde trouxemos um exemplo de como 'CONCATENAR' colunas ao escrever sua query!
 
+
+
+-- ------------------------------
+
+
 ### Utilizando o RIGHT JOIN:
 
-  Para o RIGHT JOIN vamos apenas substituir o LEFT JOIN por RIGHT JOIN dos mesmos exercícios que fizemos acima. O importante e perceber e abstrair com bastante atenção. Bora ver?!
+  Para o **`RIGHT JOIN`** vamos apenas substituir o **LEFT JOIN** por **RIGHT JOIN** e refazer os mesmos exercícios que fizemos acima ok?!. O importante é perceber e abstrair com bastante atenção o retorno da sua query.
 
   ----------------------------------------------------------------
 
-  * Muito bem, neste momento voce ja esta craque no assunto e pronto para exercitar todos esse conhecimento. Se você teve dificuldades para construir esses exercícios de fixação, de uma olhada no Gabarito que deixamos pra voce, vai ajudar a ficar ainda mais a vontade com o conteúdo.
+  * Muito bem, neste momento você já esta craque no assunto e pronto para exercitar seu conhecimento. Se você teve dificuldades para construir os exercícios de fixação, de uma olhada no Gabarito;
 
-  * Pronto para exercitar seu aprendizado?! #vqv :rocket:
+  * Pronto para praticar seu conhecimento? #vqv :rocket:
+
+  ----------------------------------------------------------------
 
 ## Vamos praticar!
 
 
-  Para os nossos exercícios iremos utilizar um banco de dados que apelidamos de SpotifyClone, um exemplo de banco de dados de um aplicativo de musicas.
+  * Para realizar os próximos exercícios, iremos utilizar um banco de dados que apelidamos de **SpotifyClone**, um exemplo de banco de dados de um aplicativo de musicas.
 
 
   Observe o diagrama do nosso banco de dados:
 
   ![Screenshot](SpotifyClone_Diagram.jpg)
+
 
 
 
@@ -503,7 +580,7 @@ Seu resultado deve retornar assim:
     VALUES
       ('gratuito', 0),
       ('familiar', 7.99),
-      ('universitÃ¡rio', 5.99),
+      ('universitário', 5.99),
       ('pessoal', 6.99);
 
     #
@@ -675,7 +752,14 @@ Seu resultado deve retornar assim:
 
   1º - Elabore uma query que retorne todas as colunas da tabela **`artists`** e todas as colunas da tabela **`albums`** relacionadas ao id do Artista;
 
+  
   2º - Elabore uma query que retorne uma coluna do nome do artista com o alias **`Artista`** da tabela **`artists`**, uma coluna do nome do album com o alias **`Album`** da tabela **`albums`** e uma coluna do nome da musica com o alias **`Musica`** da tabela **`tracks`**, com base nos dados relacionados;
+
+
+  3º - Elabore uma query que retorne todas as musicas da tabela **`tracks`** em um coluna com o alias **`Musica`** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados;
+
+
+  4º - 
 
 
 

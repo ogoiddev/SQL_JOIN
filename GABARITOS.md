@@ -119,12 +119,12 @@
 
   * Solução:
 
-  ```
-  SELECT * 
-  FROM SpotifyClone.artists AS Art
-  INNER JOIN SpotifyClone.albums AS Alb
-  ON Art.id = Alb.artist_id;
-  ```
+    ```
+    SELECT * 
+    FROM SpotifyClone.artists AS Art
+    INNER JOIN SpotifyClone.albums AS Alb
+    ON Art.id = Alb.artist_id;
+    ```
 
 
   2º Requisito:
@@ -134,17 +134,31 @@
 
   * Solução:
 
-  ```
-  SELECT Art.artist_name AS 'Artista', Alb.album_name AS 'Album', Tk.track AS 'Musica'
-  FROM SpotifyClone.artists AS Art
-  INNER JOIN SpotifyClone.albums AS Alb
-  ON Art.id = Alb.artist_id
-  INNER JOIN SpotifyClone.tracks as Tk
-  ON Tk.album_id = Alb.id;
-  ```
+    ```
+    SELECT Art.artist_name AS 'Artista', Alb.album_name AS 'Album', Tk.track AS 'Musica'
+    FROM SpotifyClone.artists AS Art
+    INNER JOIN SpotifyClone.albums AS Alb
+    ON Art.id = Alb.artist_id
+    INNER JOIN SpotifyClone.tracks as Tk
+    ON Tk.album_id = Alb.id;
+    ```
 
 
   3º Requisito:
+
+  * Elabore uma query que retorne todas as musicas da tabela **`tracks`** em um coluna com o alias **`Musica`** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados;
+
+
+    ```
+    SELECT Tk.track as 'Musica', Ph.date as 'Reproduzida em'
+    FROM SpotifyClone.tracks as Tk
+    LEFT JOIN SpotifyClone.play_history as Ph
+    ON Tk.id = Ph.track_id;
+    ```
+
+  4º Requisito:
+
+  * 
 
 
 
