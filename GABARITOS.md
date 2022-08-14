@@ -6,7 +6,7 @@
   ### Utilizando o INNER JOIN:
 
 
-  1 - Construa uma query que retorne todas as colunas da tabela *`Students`* e uma coluna com o **`status`** de aprovação da tabela **`Exams`**, dos alunos que tenham mais de 30 anos;
+  1 - Construa uma query que retorne todas as colunas da tabela *`Students`* e uma coluna com o **`status`** de aprovação com o alias **`Aprovado`**  da tabela **`Exams`**, dos alunos que tenham mais de 30 anos;
 
   * Solução:
 
@@ -20,7 +20,7 @@
 
 
 
-  2 - Construa uma query que retorne uma coluna da tabela *`Students`* com o Nome Completo do aluno, uma coluna da tabela Exams com o *`status`* de aprovação do aluno, somente dos alunos que ja realizaram a prova (*`exam_status`*) e uma coluna da tabela *`Grades`* com a turma que ele pertence;
+  2 - Construa uma query que retorne uma coluna da tabela *`Students`* com o Nome Completo do aluno e com o alias **`Nome Completo`**, uma coluna da tabela **`Exams`** com o *`status`* de aprovação do aluno com o alias **`Aprovado`** somente dos alunos que já realizaram a prova (*`exam_status`*) e uma coluna da tabela *`Grades`* com o alias **`Turma`** com da turma que ele pertence;
 
   * Solução:
 
@@ -37,7 +37,7 @@
   ### Utilizando o LEFT JOIN:
 
 
-  1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que ja realizaram as provas;
+  1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que já realizaram as provas com o alias **`Prova Entregue`**;
 
   * Solução:
 
@@ -57,7 +57,7 @@
       ON Exams.exam_status = true AND Exams.student_id = Students.id;
       ```
 
-  2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o alias **`Nome Completo`** com o nome aluno e todas as colunas da tabela *`Exams`*, relacionando apenas quem ja fez a **Prova**;
+  2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o alias **`Nome Completo`** com o nome aluno e todas as colunas da tabela *`Exams`*, buscando apenas quem já fez a **Prova**;
 
 
   * Solução:
@@ -73,10 +73,10 @@
   ### Utilizando o RIGHT JOIN:
 
 
-  Para o RIGHT JOIN vamos apenas substituir o LEFT JOIN por RIGHT JOIN dos mesmos exercícios que fizemos acima. O importante e perceber e abstrair com bastante atenção. Bora ver?!
+  Para o **`RIGHT JOIN`** vamos apenas substituir o **LEFT JOIN** por **RIGHT JOIN** e refazer os mesmos exercícios que fizemos acima ok?!. O importante é perceber e abstrair com bastante atenção o retorno da sua query.
 
   
-  1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que ja realizaram as provas;
+  1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que já realizaram as provas com o alias **`Prova Entregue`**;
 
   * Solução:
 
@@ -96,7 +96,7 @@
       ON Exams.exam_status = true AND Exams.student_id = Students.id;
       ```
 
-  2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o alias **`Nome Completo`** com o nome aluno e todas as colunas da tabela *`Exams`*, relacionando apenas quem ja fez a **Prova**;
+  2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o alias **`Nome Completo`** com o nome aluno e todas as colunas da tabela *`Exams`*, buscando apenas quem já fez a **Prova**;
 
 
   * Solução:
@@ -149,6 +149,8 @@
   * Elabore uma query que retorne todas as musicas da tabela **`tracks`** em um coluna com o alias **`Musica`** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados;
 
 
+  * Solução:
+
     ```
     SELECT Tk.track as 'Musica', Ph.date as 'Reproduzida em'
     FROM SpotifyClone.tracks as Tk
@@ -158,8 +160,40 @@
 
   4º Requisito:
 
-  * 
+  * Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário e o alias **Usuário**, uma coluna com todas as musicas da tabela **`tracks`** e com o alias **Musica** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados pelo **ID** do usuário;
 
 
+  * Solução:
 
+    ```
+    SELECT Usr.user_name as 'Usuário', Tk.track as 'Musica', Ph.date as 'Reproduzida em'
+    FROM SpotifyClone.users as Usr
+    INNER JOIN SpotifyClone.play_history as Ph
+    ON Usr.id = Ph.user_id
+    RIGHT JOIN SpotifyClone.tracks as Tk
+    ON Tk.id = Ph.track_id;
+    ```
+
+
+## BONUS
+
+  * Respostas: 
+
+  1º Requisito:
+
+  * Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna o nome das músicas que ele reproduziu com o alias **`Musica`**, na terceira coluna o nome do album da musica com o alias **`Album`**, na quarta coluna o nome do artista com o alias **`Artista`** e na ultima coluna a data e hora que a musica foi reproduzida com o alias **`Reproduzida em`**;
+
+    ```
+    SELECT Usr.user_name as 'Usuário', Tk.track as 'Musica', Al.album_name as 'Album', Art.artist_name as 'Artista', Ph.date as 'Reproduzida em'
+    FROM SpotifyClone.users as Usr
+    INNER JOIN SpotifyClone.play_history as Ph
+    ON Usr.id = Ph.user_id
+    RIGHT JOIN SpotifyClone.tracks as Tk
+    ON Tk.id = Ph.track_id
+    INNER JOIN SpotifyClone.albums as Al
+    ON Tk.album_id = Al.id
+    INNER JOIN SpotifyClone.artists as Art
+    ON Al.artist_id = Art.id
+    ORDER BY Usuário;
+    ```
 

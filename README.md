@@ -252,7 +252,7 @@ Execute a query abaixo:
   -- ------------------------------
 
 
-  * Repare que além de facilitar o entendimento do código podemos personalizar o nome da Coluna. Legal né!
+  * Repare que além de facilitar o entendimento do código podemos personalizar o nome da Coluna. Legal né?!
   
 
   -- ------------------------------
@@ -288,7 +288,7 @@ Execute a query abaixo e analise o resultado, repare que agora estamos relaciona
 
 -- ------------------------------
 
-Agora você já conheceu o poder do **`JOIN`**, então vamos nos aprofundar ainda mais neste conteúdo?!;
+Agora você já conheceu o poder do **`JOIN`**, então vamos nos aprofundar ainda mais neste conteúdo;
 
 -- ------------------------------
 
@@ -299,6 +299,7 @@ Agora você já conheceu o poder do **`JOIN`**, então vamos nos aprofundar aind
 
 ![Screenshot](LEFT_JOIN.jpg)
 
+----------------------------------------------------------------
 
 * Compare o resultado do exemplo abaixo com as informações do nosso banco de dados;
 
@@ -330,7 +331,7 @@ Seu resultado deve retornar assim:
 
 
 
-* Repare que dessa vez os dados da tabela da **`Esquerda`** foi preservado, mesmo nao sendo verdadeira a referencia dada em **`AND G.grade = 5`** que seria a turma 5. Essas referências nao atendidas retornam com os valores **`Nulos`**;
+* Repare que dessa vez os dados da tabela da **`Esquerda`** foi preservado, mesmo nao sendo verdadeira a referencia dada em **`AND G.grade = 5`** que seria a turma 5. Quando uma referência não e atendida os valores retornam **`Nulos`**;
 
 
 -- ------------------------------
@@ -342,6 +343,7 @@ Seu resultado deve retornar assim:
 
 ![Screenshot](RIGHT_JOIN.jpg)
 
+----------------------------------------------------------------
 
 * Compare o resultado do exemplo abaixo com as informações do nosso banco de dados;
 
@@ -372,15 +374,15 @@ Seu resultado deve retornar assim:
 
 
 
-* Repare que simplesmente substituímos o **`LEFT JOIN`** pelo **`RIGHT JOIN`**, dessa vez os dados da tabela da **`Direita`** foi preservado, mesmo com referencias nao atendidas, mas dessa vez com valores **`Nulos`**;
+* Repare que usamos a mesma **query**, simplesmente substituímos o **`LEFT JOIN`** pelo **`RIGHT JOIN`**, dessa vez os dados da tabela da **`Direita`** foi preservado, mesmo com referencias não atendidas;
 
 
 -- ------------------------------
 
 
-**-  Aprendemos bastante coisa com poucos comandos até aqui nao? Com este conteúdo você consegue atender a diversas tarefas e otimizar seu raciocínio de desenvolvimento. Agora vamos exercitar e fixar esse aprendizado?**
+**-  Aprendemos bastante coisa com poucos comandos até aqui nao?. Com este conteúdo você consegue atender a diversas tarefas e otimizar seu raciocínio de desenvolvimento. Agora vamos exercitar e fixar esse aprendizado?**
 
-**-  É muito importante se atentar a cada detalhe do que mostramos para garantir uma boa abstração do conteúdo.**
+**-  É muito importante se atentar a cada detalhe que mostramos para garantir uma boa abstração do conteúdo.**
 
 
 -- ------------------------------
@@ -446,7 +448,7 @@ Seu resultado deve retornar assim:
 ## Vamos praticar!
 
 
-  * Para realizar os próximos exercícios, iremos utilizar um banco de dados que apelidamos de **SpotifyClone**, um exemplo de banco de dados de um aplicativo de musicas.
+  * Para realizar os próximos exercícios, iremos utilizar um banco de dados que apelidamos de **SpotifyClone**, um exemplo de banco de dados de um aplicativo de músicas.
 
 
   Observe o diagrama do nosso banco de dados:
@@ -454,6 +456,7 @@ Seu resultado deve retornar assim:
   ![Screenshot](SpotifyClone_Diagram.jpg)
 
 
+----------------------------------------------------------------
 
 
   ***Execute o SQLScript abaixo no seu MYSQL Workbench ou no software de sua preferência:***
@@ -748,8 +751,10 @@ Seu resultado deve retornar assim:
 
   ```
 
+-- ------------------------------
 
 ### Exercícios
+
 
   1º - Elabore uma query que retorne todas as colunas da tabela **`artists`** e todas as colunas da tabela **`albums`** relacionadas ao id do Artista;
 
@@ -760,7 +765,25 @@ Seu resultado deve retornar assim:
   3º - Elabore uma query que retorne todas as musicas da tabela **`tracks`** em um coluna com o alias **`Musica`** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados;
 
 
-  4º - 
+  4º - Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário e o alias **Usuário**, uma coluna com todas as musicas da tabela **`tracks`** e com o alias **Musica** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados pelo **ID** do usuário;
+
+    - DICA: Utilize o **RIGHT JOIN** ao referenciar a tabela **tracks**.
+
+
+  5º - 
+
+
+
+
+-- ------------------------------
+
+### BONUS 
+
+
+  1º - Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna o nome das músicas que ele reproduziu com o alias **`Musica`**, na terceira coluna o nome do album da musica com o alias **`Album`**, na quarta coluna o nome do artista com o alias **`Artista`** e na ultima coluna a data e hora que a musica foi reproduzida com o alias **`Reproduzida em`**;
+
+  
+
 
 
 
