@@ -320,7 +320,7 @@ Seu resultado deve retornar assim:
 ## Exercícios de fixação
 
 
-* Utilizando o INNER JOIN:
+### Utilizando o INNER JOIN:
 
 
 1 - Construa uma query que retorne todas as colunas da tabela *`Students`* e uma coluna com o **`status`** de aprovação com o alias **`Aprovado`**  da tabela**`Exams`**, dos alunos que tenham mais de 30 anos;
@@ -337,7 +337,7 @@ Seu resultado deve retornar assim:
 
 
 
-* Utilizando o LEFT JOIN:
+### Utilizando o LEFT JOIN:
 
 
 1 - Construa uma query que retorne todas as colunas da tabela Students e uma coluna da tabela *`Exams`* dos alunos que ja realizaram as provas com o alias **`Prova Entregue`**;
@@ -350,7 +350,7 @@ Seu resultado deve retornar assim:
 
 
 
-* Utilizando o RIGHT JOIN:
+### Utilizando o RIGHT JOIN:
 
 
 
