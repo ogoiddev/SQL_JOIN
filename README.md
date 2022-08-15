@@ -1,7 +1,3 @@
-# SQL_JOIN
-
-  Material de estudo - Case para teste seletivo
-
 # JOIN - Associando Tabelas
 
 ## Sumário
@@ -768,19 +764,19 @@ Seu resultado deve retornar assim:
 
 -- ------------------------------
 
-  4º - Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário e com o alias **Usuário**, uma coluna com todas as músicas da tabela **`tracks`** e com o alias **Música** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados pelo **ID** do usuário;
+  4º - Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário e com o alias **`Usuário`**, uma coluna com todas as músicas da tabela **`tracks`** e com o alias **`Música`** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados pelo **ID** do usuário;
 
   * DICA: Utilize o **RIGHT JOIN** ao referenciar a tabela **tracks**.
 
 -- ------------------------------
 
-  5º - Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário com o alias **Usuário** e uma coluna com os artistas que cada usuário segue;
+  5º - Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário com o alias **`Usuário`** e uma coluna com os artistas que cada usuário segue;
 
   * DICA: Você vai precisar associar a tabela **`followed_artist`** e a tabela **`artists`**.
 
 -- ------------------------------
 
-  6º - Elabore uma query que retorne uma tabela com uma coluna da tabela **`users`** com o nome do usuário e com o alias **Usuário**, uma coluna da tabela **`plans`** com o nome do plano e com o alias **`Plano`** e uma coluna com o preço com o alias **`Preço`**;
+  6º - Elabore uma query que retorne uma tabela com uma coluna da tabela **`users`** com o nome do usuário e com o alias **`Usuário`**, uma coluna da tabela **`plans`** com o nome do plano e com o alias **`Plano`** e uma coluna com o preço com o alias **`Preço`**;
 
 -- ------------------------------
 

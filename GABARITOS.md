@@ -174,7 +174,7 @@
 
   4º Requisito:
 
-  * Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário e o alias **Usuário**, uma coluna com todas as músicas da tabela **`tracks`** e com o alias **Música** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados pelo **ID** do usuário;
+  * Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário e o alias **`Usuário`**, uma coluna com todas as músicas da tabela **`tracks`** e com o alias **`Música`** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados pelo **ID** do usuário;
 
 
   * Solução:
@@ -192,7 +192,7 @@
 
   5º Requisito:
 
-  * Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário com o alias **Usuário** e uma coluna com os artistas que cada usuário segue;
+  * Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário com o alias **`Usuário`** e uma coluna com os artistas que cada usuário segue;
 
 
   * Solução:
@@ -210,7 +210,7 @@
   -- ------------------------------
   6º Requisito:
 
-  * Elabore uma query que retorne uma tabela com uma coluna da tabela **`users`** com o nome do usuário e com o alias **Usuário**, uma coluna da tabela **`plans`** com o nome do plano e com o alias **`Plano`** e uma coluna com o preço com o alias **`Preço`**;
+  * Elabore uma query que retorne uma tabela com uma coluna da tabela **`users`** com o nome do usuário e com o alias **`Usuário`**, uma coluna da tabela **`plans`** com o nome do plano e com o alias **`Plano`** e uma coluna com o preço com o alias **`Preço`**;
 
 
   * Solução:
