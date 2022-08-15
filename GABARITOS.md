@@ -255,6 +255,7 @@
 
   * Solução:
 
+    ```
     SELECT Usr.user_name as 'Usuário', Tk.track as 'Música', Al.album_name as 'álbum', Art.artist_name as 'Artista', Ph.date as 'Reproduzida em'
     FROM SpotifyClone.users as Usr
     INNER JOIN SpotifyClone.play_history as Ph
@@ -266,6 +267,7 @@
     INNER JOIN SpotifyClone.artists as Art
     ON Al.artist_id = Art.id
     ORDER BY Usuário;
+    ```
 
 
   -- ------------------------------
