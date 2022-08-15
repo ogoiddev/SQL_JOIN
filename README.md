@@ -439,9 +439,9 @@ Seu resultado deve retornar assim:
 
   ----------------------------------------------------------------
 
-  * Muito bem, neste momento você já está craque no assunto e pronto para exercitar seu conhecimento. Se você teve dificuldades para construir os exercícios de fixação, de uma olhada no Gabarito;
+  * Muito bem, neste momento você já está craque no assunto e pronto para exercitar seu conhecimento. Se você teve dificuldades para resolver os exercícios de fixação, revise o conteúdo. Se mesmo assim restar dúvidas de uma olhada no Gabarito;
 
-  * Pronto para praticar seu conhecimento? #vqv :rocket:
+  * Pronto para praticar seu conhecimento? #vqv --- :rocket:
 
   ----------------------------------------------------------------
 
