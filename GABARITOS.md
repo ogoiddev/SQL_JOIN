@@ -18,7 +18,7 @@
     WHERE Students.age > 30;
     ```
 
-
+  -- ------------------------------
 
   2 - Construa uma query que retorne uma coluna da tabela *`Students`* com o Nome Completo do aluno e com o alias **`Nome Completo`**, uma coluna da tabela **`Exams`** com o *`status`* de aprovação do aluno com o alias **`Aprovado`** somente dos alunos que já realizaram a prova (*`exam_status`*) e uma coluna da tabela *`Grades`* com o alias **`Turma`** com da turma que ele pertence;
 
@@ -33,7 +33,7 @@
     ON S.id = G.student_id;
     ```
 
-
+  -- ------------------------------
   ### Utilizando o LEFT JOIN:
 
 
@@ -57,6 +57,10 @@
       ON Exams.exam_status = true AND Exams.student_id = Students.id;
       ```
 
+
+  -- ------------------------------
+
+
   2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o alias **`Nome Completo`** com o nome aluno e todas as colunas da tabela *`Exams`*, buscando apenas quem já fez a **Prova**;
 
 
@@ -69,7 +73,7 @@
     ON E.exam_status = true AND S.id = E.student_id;
     ```
 
-
+  -- ------------------------------
   ### Utilizando o RIGHT JOIN:
 
 
@@ -96,6 +100,9 @@
       ON Exams.exam_status = true AND Exams.student_id = Students.id;
       ```
 
+  -- ------------------------------
+
+
   2 - Construa uma query que retorne uma coluna da tabela *`Student`* com o alias **`Nome Completo`** com o nome aluno e todas as colunas da tabela *`Exams`*, buscando apenas quem já fez a **Prova**;
 
 
@@ -108,7 +115,7 @@
     ON E.exam_status = true AND S.id = E.student_id;
     ```
 
-
+  -- ------------------------------
 ## Exercícios
 
 * Respostas:
@@ -127,6 +134,9 @@
     ```
 
 
+  -- ------------------------------
+
+
   2º Requisito:
 
   * Elabore uma query que retorne uma coluna do nome do artista com o alias **`Artista`** da tabela **`artists`**, uma coluna do nome do album com o alias **`Album`** da tabela **`albums`** e uma coluna do nome da musica com o alias **`Musica`** da tabela **`tracks`**, com base nos dados relacionados;
@@ -143,6 +153,7 @@
     ON Tk.album_id = Alb.id;
     ```
 
+  -- ------------------------------
 
   3º Requisito:
 
@@ -157,6 +168,9 @@
     LEFT JOIN SpotifyClone.play_history as Ph
     ON Tk.id = Ph.track_id;
     ```
+
+  -- ------------------------------
+
 
   4º Requisito:
 
@@ -174,16 +188,41 @@
     ON Tk.id = Ph.track_id;
     ```
 
+  -- ------------------------------
 
-## BONUS
+## BÔNUS
 
   * Respostas: 
 
   1º Requisito:
 
-  * Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna o nome das músicas que ele reproduziu com o alias **`Musica`**, na terceira coluna o nome do album da musica com o alias **`Album`**, na quarta coluna o nome do artista com o alias **`Artista`** e na ultima coluna a data e hora que a musica foi reproduzida com o alias **`Reproduzida em`**;
+  * Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna o nome das músicas que ele reproduziu com o alias **`Música`**, na terceira coluna o nome do album da música com o alias **`Álbum`**, na quarta coluna o nome do artista com o alias **`Artista`** e na ultima coluna a data e hora que a música foi reproduzida com o alias **`Reproduzida em`**;
+
+
+  * Solução:
 
     ```
+    SELECT Usr.user_name as 'Usuário', Tk.track as 'Musica', Al.album_name as 'Album', Art.artist_name as 'Artista', Ph.date as 'Reproduzida em'
+    FROM SpotifyClone.users as Usr
+    INNER JOIN SpotifyClone.play_history as Ph
+    ON Usr.id = Ph.user_id
+    INNER JOIN SpotifyClone.tracks as Tk
+    ON Tk.id = Ph.track_id
+    INNER JOIN SpotifyClone.albums as Al
+    ON Tk.album_id = Al.id
+    INNER JOIN SpotifyClone.artists as Art
+    ON Al.artist_id = Art.id
+    ORDER BY Usuário;
+    ```
+
+  -- ------------------------------
+
+  2º Requisito:
+
+  * Elabore uma query com as mesmas exigências do 1º requisito BONUS, mas agora retornando todas as musicas na coluna **`Musica`**, mesmo que ela nao tenha sido reproduzida;
+
+  * Solução:
+
     SELECT Usr.user_name as 'Usuário', Tk.track as 'Musica', Al.album_name as 'Album', Art.artist_name as 'Artista', Ph.date as 'Reproduzida em'
     FROM SpotifyClone.users as Usr
     INNER JOIN SpotifyClone.play_history as Ph
@@ -195,5 +234,3 @@
     INNER JOIN SpotifyClone.artists as Art
     ON Al.artist_id = Art.id
     ORDER BY Usuário;
-    ```
-

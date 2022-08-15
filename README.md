@@ -2,7 +2,7 @@
 
   Material de estudo - Case para teste seletivo
 
-# JOIN - Relacionamento de Tabelas
+# JOIN - Associando Tabelas
 
 ## Sumário
 
@@ -25,14 +25,14 @@
 
   * Olá, hoje você vai aprender a utilizar a *cláusula* **`JOIN`**;
   
-  * Com o **`JOIN`** você pode combinar dados entre tabelas relacionais ou até mesmo entre dados de uma única tabela, afim de gerar uma tabela personalizada conforme a sua necessidade;
+  * Com o **`JOIN`** você pode combinar dados entre tabelas relacionais ou até mesmo entre dados de uma única tabela, a fim de gerar uma tabela personalizada conforme a sua necessidade;
 
 
 ## Você será capaz de:
 
   * Compreender a como utilizar o **`INNER JOIN`**, para combinar dados entre duas ou mais tabelas;
 
-  * Voce também vai aprender a usar o **`LEFT JOIN`** e **`RIGHT JOIN`**, para combinar dados entre duas ou mais tabelas, preservando os dados de uma das tabela mesmo tendo uma referencia não atendida;
+  * Você também vai aprender a usar o **`LEFT JOIN`** e **`RIGHT JOIN`**, para combinar dados entre duas ou mais tabelas, preservando os dados de uma das tabela mesmo tendo uma referência não atendida;
   
   * Não deixe de ver os recursos adicionais, lá você vai aprender sobre **`SELF JOIN`**, **`FULL JOIN`**, **`SEMI JOIN`** e **`ANTI JOIN`** e outras curiosidades;
 
@@ -259,7 +259,7 @@ Execute a query abaixo:
 
 * Vamos ver mais um exemplo com **`INNER JOIN`**:
 
-Agora digamos que voce precise de uma tabela que retorne o **`Nome Completo`** dos alunos que já realizaram as **`provas`** e de qual **`Turma`** eles são, repare que vamos renomear os nomes das colunas para a tabela ficar mais amigável;
+Agora digamos que você precise de uma tabela que retorne o **`Nome Completo`** dos alunos que já realizaram as **`provas`** e de qual **`Turma`** eles são, observe que vamos renomear os nomes das colunas para a tabela ficar mais amigável;
 
 
 Execute a query abaixo e analise o resultado, repare que agora estamos relacionando dados entre 3 tabelas diferentes:
@@ -294,7 +294,7 @@ Agora você já conheceu o poder do **`JOIN`**, então vamos nos aprofundar aind
 
 ### LEFT JOIN
 
-* Com o **`LEFT JOIN`** associamos dados entre duas ou mais tabelas, preservando todos os dados da tabela da **`Esquerda`**. A tabela da **esquerda** e a primeira tabela que voce chama no código, referenciada no seu **`FROM`**;
+* Com o **`LEFT JOIN`** associamos dados entre duas ou mais tabelas, preservando todos os dados da tabela da **`Esquerda`**. A tabela da **esquerda** e a primeira tabela que você chama no código, referenciada no seu **`FROM`**;
 
 
 ![Screenshot](LEFT_JOIN.jpg)
@@ -331,7 +331,7 @@ Seu resultado deve retornar assim:
 
 
 
-* Repare que dessa vez os dados da tabela da **`Esquerda`** foi preservado, mesmo nao sendo verdadeira a referencia dada em **`AND G.grade = 5`** que seria a turma 5. Quando uma referência não e atendida os valores retornam **`Nulos`**;
+* Repare que desta vez os dados da tabela da **`Esquerda`** foi preservado, mesmo não sendo verdadeira a referência dada em **`AND G.grade = 5`** que seria a turma 5. Quando uma referência não é atendida os valores retornam **`Nulos`**;
 
 
 -- ------------------------------
@@ -339,7 +339,7 @@ Seu resultado deve retornar assim:
 
 ### RIGHT JOIN
 
-* Com o **`RIGHT JOIN`** associamos dados entre duas ou mais tabelas, preservando todos os dados da tabela que esta na **`Direita`**. A tabela da **Direita** é a próxima tabela que você chama no código, a referenciada no seu **`JOIN`** por exemplo;
+* Com o **`RIGHT JOIN`** associamos dados entre duas ou mais tabelas, preservando todos os dados da tabela que está na **`Direita`**. A tabela da **Direita** é a próxima tabela que você chama no código, a referenciada no seu **`JOIN`** por exemplo;
 
 ![Screenshot](RIGHT_JOIN.jpg)
 
@@ -374,13 +374,13 @@ Seu resultado deve retornar assim:
 
 
 
-* Repare que usamos a mesma **query**, simplesmente substituímos o **`LEFT JOIN`** pelo **`RIGHT JOIN`**, dessa vez os dados da tabela da **`Direita`** foi preservado, mesmo com referencias não atendidas;
+* Repare que usamos a mesma **query**, simplesmente substituímos o **`LEFT JOIN`** pelo **`RIGHT JOIN`**, dessa vez os dados da tabela da **`Direita`** foi preservado, mesmo com a referência não atendida;
 
 
 -- ------------------------------
 
 
-**-  Aprendemos bastante coisa com poucos comandos até aqui nao?. Com este conteúdo você consegue atender a diversas tarefas e otimizar seu raciocínio de desenvolvimento. Agora vamos exercitar e fixar esse aprendizado?**
+**-  Aprendemos bastante coisa com poucos comandos até aqui, não?. Com este conteúdo você consegue atender a diversas tarefas e otimizar seu raciocínio de desenvolvimento. Agora vamos exercitar e fixar esse aprendizado?**
 
 **-  É muito importante se atentar a cada detalhe que mostramos para garantir uma boa abstração do conteúdo.**
 
@@ -439,7 +439,7 @@ Seu resultado deve retornar assim:
 
   ----------------------------------------------------------------
 
-  * Muito bem, neste momento você já esta craque no assunto e pronto para exercitar seu conhecimento. Se você teve dificuldades para construir os exercícios de fixação, de uma olhada no Gabarito;
+  * Muito bem, neste momento você já está craque no assunto e pronto para exercitar seu conhecimento. Se você teve dificuldades para construir os exercícios de fixação, de uma olhada no Gabarito;
 
   * Pronto para praticar seu conhecimento? #vqv :rocket:
 
@@ -758,17 +758,21 @@ Seu resultado deve retornar assim:
 
   1º - Elabore uma query que retorne todas as colunas da tabela **`artists`** e todas as colunas da tabela **`albums`** relacionadas ao id do Artista;
 
+-- ------------------------------
   
-  2º - Elabore uma query que retorne uma coluna do nome do artista com o alias **`Artista`** da tabela **`artists`**, uma coluna do nome do album com o alias **`Album`** da tabela **`albums`** e uma coluna do nome da musica com o alias **`Musica`** da tabela **`tracks`**, com base nos dados relacionados;
+  2º - Elabore uma query que retorne uma coluna do nome do artista com o alias **`Artista`** da tabela **`artists`**, uma coluna do nome do álbum com o alias **`Álbum`** da tabela **`albums`** e uma coluna do nome da música com o alias **`Música`** da tabela **`tracks`**, com base nos dados relacionados;
 
+-- ------------------------------
 
-  3º - Elabore uma query que retorne todas as musicas da tabela **`tracks`** em um coluna com o alias **`Musica`** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados;
+  3º - Elabore uma query que retorne todas as músicas da tabela **`tracks`** em um coluna com o alias **`Música`** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados;
 
+-- ------------------------------
 
-  4º - Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário e o alias **Usuário**, uma coluna com todas as musicas da tabela **`tracks`** e com o alias **Musica** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados pelo **ID** do usuário;
+  4º - Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário e o alias **Usuário**, uma coluna com todas as músicas da tabela **`tracks`** e com o alias **Música** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados pelo **ID** do usuário;
 
   * DICA: Utilize o **RIGHT JOIN** ao referenciar a tabela **tracks**.
 
+-- ------------------------------
 
   5º - 
 
@@ -777,11 +781,14 @@ Seu resultado deve retornar assim:
 
 -- ------------------------------
 
-### BONUS 
+### BÔNUS
 
 
-  1º - Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna o nome das músicas que ele reproduziu com o alias **`Musica`**, na terceira coluna o nome do album da musica com o alias **`Album`**, na quarta coluna o nome do artista com o alias **`Artista`** e na ultima coluna a data e hora que a musica foi reproduzida com o alias **`Reproduzida em`**;
+  1º - Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna o nome das músicas que ele reproduziu com o alias **`Música`**, na terceira coluna o nome do album da música com o alias **`Álbum`**, na quarta coluna o nome do artista com o alias **`Artista`** e na ultima coluna a data e hora que a música foi reproduzida com o alias **`Reproduzida em`**;
 
+-- ------------------------------
+  
+  2º - Elabore uma query com as mesmas exigências do 1º requisito BONUS, mas agora retornando todas as musicas na coluna **`Musica`**, mesmo que ela nao tenha sido reproduzida;
 
 
 
@@ -791,7 +798,7 @@ Seu resultado deve retornar assim:
 ## Recursos Adicionais
 
 
-  Abaixo separamos algumas referencias para voce se aprofundar ainda mais e conhecer todos os recursos possíveis que o JOIN pode oferecer e também separamos o link da documentação do MySql e do Mysql Workbench para deixar voce muito bem informado;
+  Abaixo separamos algumas referências para você se aprofundar no conteúdo e conhecer todos os recursos possíveis que o JOIN pode oferecer e também separamos o link da documentação do MySql e do Mysql Workbench para deixar você bem informado;
 
 
 
