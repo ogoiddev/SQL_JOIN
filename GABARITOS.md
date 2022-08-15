@@ -190,13 +190,45 @@
 
   -- ------------------------------
 
+  5º Requisito:
+
+  * Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário com o alias **Usuário** e uma coluna com os artistas que cada usuário segue;
+
+
+  * Solução:
+
+    ```
+    SELECT Usr.user_name as 'Usuário', Art.artist_name as 'Segue o Artista'
+    FROM SpotifyClone.users as Usr
+    INNER JOIN SpotifyClone.followed_artist as Fa
+    ON Usr.id = Fa.user_id
+    INNER JOIN SpotifyClone.artists as Art
+    ON Fa.artist_id = Art.id
+    ORDER BY Usuário;
+    ```
+
+  -- ------------------------------
+  6º Requisito:
+
+  * Elabore uma query que retorne uma tabela com uma coluna da tabela **`users`** com o nome do usuário e com o alias **Usuário**, uma coluna da tabela **`plans`** com o nome do plano e com o alias **`Plano`** e uma coluna com o preço com o alias **`Preço`**;
+
+
+  * Solução:
+
+    ```
+    SELECT Usr.user_name as 'Usuário', Pl.plan as 'Plano', Pl.price as 'Preço'
+    FROM SpotifyClone.users AS Usr
+    INNER JOIN SpotifyClone.plans AS Pl
+    ON Usr.plan_id = Pl.id;
+    ```
+
 ## BÔNUS
 
   * Respostas: 
 
   1º Requisito:
 
-  * Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna o nome das músicas que ele reproduziu com o alias **`Música`**, na terceira coluna o nome do album da música com o alias **`Álbum`**, na quarta coluna o nome do artista com o alias **`Artista`** e na ultima coluna a data e hora que a música foi reproduzida com o alias **`Reproduzida em`**;
+  * Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna o nome das músicas que ele reproduziu com o alias **`Música`**, na terceira coluna o nome do album da música com o alias **`Álbum`**, na quarta coluna o nome do artista com o alias **`Artista`** e na ultima coluna a data e hora que a música foi reproduzida com o alias **`Reproduzida em`**. Ordene em ordem alfabética pela coluna **`Usuário`**;
 
 
   * Solução:
@@ -219,7 +251,7 @@
 
   2º Requisito:
 
-  * Elabore uma query com as mesmas exigências do 1º requisito BONUS, mas agora retornando todas as musicas na coluna **`Musica`**, mesmo que ela nao tenha sido reproduzida;
+  * Elabore uma query com as mesmas exigências do 1º requisito BONUS, mas agora retornando todas as musicas na coluna **`Musica`**, mesmo que ela nao tenha sido reproduzida. Ordene em ordem alfabética pela coluna **`Usuário`**;
 
   * Solução:
 
@@ -234,3 +266,29 @@
     INNER JOIN SpotifyClone.artists as Art
     ON Al.artist_id = Art.id
     ORDER BY Usuário;
+
+
+  -- ------------------------------
+
+  3º Requisito:
+
+  * Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna os nomes dos artistas que ele segue com o alias **`Segue o Artista`**, na terceira coluna os nomes das musicas que ele ja ouviu com o alias **`Ja ouviu a musica`** e na ultima coluna a data e hora que a música foi reproduzida com o alias **`Reproduzida em`**. Ordene em ordem alfabética pela coluna **`Usuário`**;
+
+
+  * Solução:
+
+    ```
+    SELECT Usr.user_name as 'Usuário', Art.artist_name as 'Segue o Artista', Tk.track as 'Ja ouviu a musica', Ph.date as 'Reproduzida em'
+    FROM SpotifyClone.users as Usr
+    INNER JOIN SpotifyClone.followed_artist as Fa
+    ON Usr.id = Fa.user_id
+    INNER JOIN SpotifyClone.artists as Art
+    ON Fa.artist_id = Art.id
+    INNER JOIN SpotifyClone.play_history as Ph
+    ON Ph.user_id = Usr.id
+    INNER JOIN SpotifyClone.tracks as Tk
+    ON Tk.id = Ph.track_id
+    ORDER BY Usuário;
+    ```
+
+  -- ------------------------------

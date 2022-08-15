@@ -764,36 +764,40 @@ Seu resultado deve retornar assim:
 
 -- ------------------------------
 
-  3º - Elabore uma query que retorne todas as músicas da tabela **`tracks`** em um coluna com o alias **`Música`** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados;
+  3º - Elabore uma query que retorne todas as músicas da tabela **`tracks`** em um coluna e com o alias **`Música`** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados;
 
 -- ------------------------------
 
-  4º - Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário e o alias **Usuário**, uma coluna com todas as músicas da tabela **`tracks`** e com o alias **Música** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados pelo **ID** do usuário;
+  4º - Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário e com o alias **Usuário**, uma coluna com todas as músicas da tabela **`tracks`** e com o alias **Música** e uma coluna com o alias **`Reproduzida em`** da tabela **`play_history`**, com base nos dados relacionados pelo **ID** do usuário;
 
   * DICA: Utilize o **RIGHT JOIN** ao referenciar a tabela **tracks**.
 
 -- ------------------------------
 
-  5º - 
+  5º - Elabore uma query que retorne uma coluna da tabela **`users`** com o nome do usuário com o alias **Usuário** e uma coluna com os artistas que cada usuário segue;
 
+  * DICA: Você vai precisar associar a tabela **`followed_artist`** e a tabela **`artists`**.
 
+-- ------------------------------
 
+  6º - Elabore uma query que retorne uma tabela com uma coluna da tabela **`users`** com o nome do usuário e com o alias **Usuário**, uma coluna da tabela **`plans`** com o nome do plano e com o alias **`Plano`** e uma coluna com o preço com o alias **`Preço`**;
 
 -- ------------------------------
 
 ### BÔNUS
 
 
-  1º - Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna o nome das músicas que ele reproduziu com o alias **`Música`**, na terceira coluna o nome do album da música com o alias **`Álbum`**, na quarta coluna o nome do artista com o alias **`Artista`** e na ultima coluna a data e hora que a música foi reproduzida com o alias **`Reproduzida em`**;
+  1º - Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna o nome das músicas que ele reproduziu com o alias **`Música`**, na terceira coluna o nome do album da música com o alias **`Álbum`**, na quarta coluna o nome do artista com o alias **`Artista`** e na ultima coluna a data e hora que a música foi reproduzida com o alias **`Reproduzida em`**. Ordene em ordem alfabética pela coluna **`Usuário`**;
 
 -- ------------------------------
   
-  2º - Elabore uma query com as mesmas exigências do 1º requisito BONUS, mas agora retornando todas as musicas na coluna **`Musica`**, mesmo que ela nao tenha sido reproduzida;
+  2º - Elabore uma query com as mesmas exigências do 1º requisito BONUS, mas agora retornando todas as musicas na coluna **`Musica`**, mesmo que ela nao tenha sido reproduzida. Ordene em ordem alfabética pela coluna **`Usuário`**;
 
+-- ------------------------------
 
+  3º - Elabore uma query que retorne na primeira coluna o usuário com o alias **`Usuário`**, na segunda coluna os nomes dos artistas que ele segue com o alias **`Segue o Artista`**, na terceira coluna os nomes das musicas que ele ja ouviu com o alias **`Ja ouviu a musica`** e na ultima coluna a data e hora que a música foi reproduzida com o alias **`Reproduzida em`**. Ordene em ordem alfabética pela coluna **`Usuário`**;
 
-
-
+-- ------------------------------
 
 ## Recursos Adicionais
 

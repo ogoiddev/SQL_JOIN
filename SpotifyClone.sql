@@ -120,7 +120,7 @@
     VALUES
       ('gratuito', 0),
       ('familiar', 7.99),
-      ('universitÃ¡rio', 5.99),
+      ('universitário', 5.99),
       ('pessoal', 6.99);
 
     #
